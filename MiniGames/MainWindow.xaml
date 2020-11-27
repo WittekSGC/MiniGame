@@ -1,0 +1,67 @@
+﻿<Window x:Class="MiniGames.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniGames"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800" WindowStyle="ThreeDBorderWindow" MinWidth="800" MinHeight="600">
+    <Window.Resources>
+        <Storyboard x:Key="OnHoverItem" AutoReverse="True"/>
+    </Window.Resources>
+
+    <Window.Background>
+        <SolidColorBrush Color="AliceBlue"/>
+    </Window.Background>
+
+    <Grid x:Name="RootGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="105"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TITLE-->
+        <Rectangle Grid.ColumnSpan="3">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="Gray" Opacity="0.2"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   FontSize="64" 
+                   FontFamily="Vaca Cyr" 
+                   Foreground="#FF0080FF" 
+                   Margin="179,16,178,15" 
+                   Height="74" 
+                   Width="435">
+            УЧИСЬ ИГРАЯ
+        </TextBlock>
+
+        <!--ITEMS-->
+        <Grid Grid.Row="1" 
+              Grid.Column="1" 
+              Grid.RowSpan="3"
+              x:Name="ItemsGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Grid>
+</Window>
