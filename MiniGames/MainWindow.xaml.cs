@@ -83,8 +83,8 @@ namespace MiniGames
                 images[i].HorizontalAlignment = HorizontalAlignment.Center;
                 images[i].Cursor = Cursors.Hand;
 
-                Grid.SetColumn(images[i], i / 3);
-                Grid.SetRow(images[i], i % 3);
+                Grid.SetColumn(images[i], i % 3);
+                Grid.SetRow(images[i], i / 3);
 
                 images[i].MouseEnter += Item_MouseEnter; //для анимации
                 images[i].MouseLeave += Item_MouseLeave; ; //для анимации

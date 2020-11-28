@@ -115,6 +115,31 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Resources\Game1\unknown.jpg" />
+    <Resource Include="Resources\Game1\A1.jpg" />
+    <Resource Include="Resources\Game1\A10.jpg" />
+    <Resource Include="Resources\Game1\A11.jpg" />
+    <Resource Include="Resources\Game1\A12.jpg" />
+    <Resource Include="Resources\Game1\A2.jpg" />
+    <Resource Include="Resources\Game1\A3.jpg" />
+    <Resource Include="Resources\Game1\A4.jpg" />
+    <Resource Include="Resources\Game1\A5.jpg" />
+    <Resource Include="Resources\Game1\A6.jpg" />
+    <Resource Include="Resources\Game1\A7.jpg" />
+    <Resource Include="Resources\Game1\A8.jpg" />
+    <Resource Include="Resources\Game1\A9.jpg" />
+    <Resource Include="Resources\Game1\B1.jpg" />
+    <Resource Include="Resources\Game1\B10.jpg" />
+    <Resource Include="Resources\Game1\B11.jpg" />
+    <Resource Include="Resources\Game1\B12.jpg" />
+    <Resource Include="Resources\Game1\B2.jpg" />
+    <Resource Include="Resources\Game1\B3.jpg" />
+    <Resource Include="Resources\Game1\B4.jpg" />
+    <Resource Include="Resources\Game1\B5.jpg" />
+    <Resource Include="Resources\Game1\B6.jpg" />
+    <Resource Include="Resources\Game1\B7.jpg" />
+    <Resource Include="Resources\Game1\B8.jpg" />
+    <Resource Include="Resources\Game1\B9.jpg" />
     <Content Include="Resources\Game1\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
