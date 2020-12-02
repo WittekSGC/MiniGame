@@ -1,0 +1,34 @@
+﻿<Window x:Class="MiniGames.ModalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniGames"
+        mc:Ignorable="d"
+        Title="ModalWindow" Height="200" Width="400" MinWidth="200" MinHeight="99" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="AliceBlue" Offset="0.4"/>
+            <GradientStop Color="Aqua" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid x:Name="RootGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="CloseButton"
+            Source="Resources/closeButton.png"
+            HorizontalAlignment="Right"/>
+        <TextBlock x:Name="ModalText"
+                   TextWrapping="Wrap"
+                   Grid.Row="1" 
+                   FontFamily="/MiniGames;component/Resources/Font/#Earth's Mightiest Cyrillic" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="42">
+            Какой-то текст
+        </TextBlock>
+    </Grid>
+
+</Window>

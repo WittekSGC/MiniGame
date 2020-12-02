@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MiniGames"
         mc:Ignorable="d"
-        Title="GameWindow1" 
+        Title="Что где растёт?" 
         Height="600" 
         Width="800"
         MinHeight="600" 
-        MinWidth="800" Loaded="Window_Loaded">
+        MinWidth="800" Loaded="Window_Loaded" WindowStyle="ThreeDBorderWindow">
     <Window.Background>
         <ImageBrush ImageSource="/Resources/Game1/background.jpg"/>
     </Window.Background>
@@ -50,26 +50,66 @@
                    Grid.Row="1"
                    Margin="10"
                    AllowDrop="True"
-                   x:Name="Target1"/>
+                   x:Name="Target1"
+                   Drop="Target_Drop"/>
             <Image Source="Resources/Game1/unknown.jpg"
                    Grid.Row="1" 
                    Grid.Column="1"
                    Margin="10"
                    AllowDrop="True"
-                   x:Name="Target2"/>
+                   x:Name="Target2"
+                   Drop="Target_Drop"/>
             <Image Source="Resources/Game1/unknown.jpg" 
                    Grid.Row="1" 
                    Grid.Column="2" 
                    Margin="10"
                    AllowDrop="True"
-                   x:Name="Target3"/>
+                   x:Name="Target3"
+                   Drop="Target_Drop"/>
             <Image Source="Resources/Game1/unknown.jpg" 
                    Grid.Row="1" 
                    Grid.Column="3"
                    Margin="10"
                    AllowDrop="True"
-                   x:Name="Target4"/>
+                   x:Name="Target4"
+                   Drop="Target_Drop"/>
         </Grid>
 
+        <Rectangle Grid.Column="0"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="20">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#ffff00" Offset="0" />
+                    <GradientStop Color="#ff7700" Offset="1" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Grid Grid.Column="1"
+              Grid.Row="3"
+              Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="Resources/Game1/star.png"
+                   Grid.Column="0"
+                   x:Name="Star1"
+                   Margin="5"
+                   Opacity="0.2" />
+            <Image Source="Resources/Game1/star.png"
+                   Grid.Column="1"
+                   x:Name="Star2"
+                   Margin="5" 
+                   Opacity="0.2"/>
+            <Image Source="Resources/Game1/star.png"
+                   Grid.Column="2"
+                   x:Name="Star3"
+                   Margin="5" 
+                   Opacity="0.2"/>
+        </Grid>
     </Grid>
 </Window>

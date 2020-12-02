@@ -75,8 +75,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModalWindow.xaml.cs">
+      <DependentUpon>ModalWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -98,12 +105,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\Font\EarthsMightiest.otf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\image0.jpg" />
     <Resource Include="Resources\image1.jpg" />
     <Resource Include="Resources\image2.jpg" />
     <Resource Include="Resources\image3.jpg" />
@@ -115,6 +122,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Resources\Game1\star.png" />
+    <Resource Include="Resources\image0.jpg" />
     <Resource Include="Resources\Game1\unknown.jpg" />
     <Resource Include="Resources\Game1\A1.jpg" />
     <Resource Include="Resources\Game1\A10.jpg" />
@@ -140,6 +149,7 @@
     <Resource Include="Resources\Game1\B7.jpg" />
     <Resource Include="Resources\Game1\B8.jpg" />
     <Resource Include="Resources\Game1\B9.jpg" />
+    <Content Include="Resources\closeButton.png" />
     <Content Include="Resources\Game1\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

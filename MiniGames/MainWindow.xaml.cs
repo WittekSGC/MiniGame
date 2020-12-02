@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace MiniGames
         private const int n = 9; //кол-во игр
         private Image[] images = new Image[n];
         private TextBlock[] textBlocks = new TextBlock[n];
-        private string[] GamesName = new string[] { "Game1", "Game2", "Game3", "Game4", "Game5", "Game6", "Game7", "Game8", "Game9" };
+        private string[] GamesName = new string[] { "Что где растёт?", "Game2", "Game3", "Game4", "Game5", "Game6", "Game7", "Game8", "Game9" };
         private Window[] Games = new Window[n];
 
         public WindowState windowState;
@@ -40,6 +41,8 @@ namespace MiniGames
             this.Closed += MainWindow_Closed;
 
             CreateItems();
+
+            new ModalWindow("TEST", ModalWindowMode.TextWithYesNoBtn).ShowDialog();
         }
 
         private void MainWindow_Closed(object sender, EventArgs e)
@@ -60,9 +63,12 @@ namespace MiniGames
 
         private void CorrectingFontOnTextBlocks()
         {
+            int size = Convert.ToInt32(Width);
+            if (Width > Height) size = Convert.ToInt32(Height);
+
             for (int i = 0; i < n; i++)
                 if (this.WindowState != WindowState.Maximized)
-                    textBlocks[i].FontSize = 10 + Height / 48;
+                    textBlocks[i].FontSize = 8 + size / 56;
                 else
                     textBlocks[i].FontSize = 30;
         }
@@ -99,9 +105,10 @@ namespace MiniGames
                 textBlocks[i].TextAlignment = TextAlignment.Center;
                 textBlocks[i].VerticalAlignment = VerticalAlignment.Bottom;
                 textBlocks[i].Margin = new Thickness(0, 0, 0, 20);
+                textBlocks[i].Background = new SolidColorBrush(Color.FromArgb(200, 240, 248, 255));
 
-                Grid.SetColumn(textBlocks[i], i / 3);
-                Grid.SetRow(textBlocks[i], i % 3);
+                Grid.SetColumn(textBlocks[i], i % 3);
+                Grid.SetRow(textBlocks[i], i / 3);
 
                 ItemsGrid.Children.Add(textBlocks[i]);
             }

@@ -38,12 +38,14 @@
                    Grid.ColumnSpan="3" 
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Center" 
-                   FontSize="64" 
-                   FontFamily="Vaca Cyr" 
+                   FontSize="72" 
+                   FontFamily="/MiniGames;component/Resources/Font/#Earth's Mightiest Cyrillic" 
                    Foreground="#FF0080FF" 
                    Margin="179,16,178,15" 
                    Height="74" 
-                   Width="435">
+                   Width="435"
+                   x:Name="Title" 
+                   TextAlignment="Center">
             УЧИСЬ ИГРАЯ
         </TextBlock>
 
