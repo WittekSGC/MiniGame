@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MiniGames"
         mc:Ignorable="d"
-        Title="ModalWindow" Height="200" Width="400" MinWidth="200" MinHeight="99" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+        Title="ModalWindow" Height="200" Width="400" MinWidth="200" MinHeight="99" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Window.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -16,17 +16,19 @@
 
     <Grid x:Name="RootGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Image x:Name="CloseButton"
-            Source="Resources/closeButton.png"
-            HorizontalAlignment="Right"/>
+               Source="Resources/closeButton.png"
+               HorizontalAlignment="Right"
+               Cursor="Hand"/>
         <TextBlock x:Name="ModalText"
+                   Margin="10"
                    TextWrapping="Wrap"
                    Grid.Row="1" 
-                   FontFamily="/MiniGames;component/Resources/Font/#Earth's Mightiest Cyrillic" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="42">
+                   FontFamily="/MiniGames;component/Resources/Font/#Earth's Mightiest Cyrillic" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="42" TextAlignment="Center">
             Какой-то текст
         </TextBlock>
     </Grid>

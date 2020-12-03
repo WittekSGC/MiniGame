@@ -41,8 +41,6 @@ namespace MiniGames
             this.Closed += MainWindow_Closed;
 
             CreateItems();
-
-            new ModalWindow("TEST", ModalWindowMode.TextWithYesNoBtn).ShowDialog();
         }
 
         private void MainWindow_Closed(object sender, EventArgs e)
@@ -155,6 +153,18 @@ namespace MiniGames
             anim.To = new Thickness(0,0,0,10);
             anim.Duration = TimeSpan.FromSeconds(0.4);
             ((UIElement)sender).BeginAnimation(MarginProperty, anim);
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            switch (new ModalWindow("Вы действительно хотите выйти из игры?", ModalWindowMode.TextWithYesNoBtn).ShowDialog())
+            {
+                case false:
+                    e.Cancel = true;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

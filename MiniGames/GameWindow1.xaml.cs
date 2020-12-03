@@ -33,7 +33,6 @@ namespace MiniGames
         private Image LastClicked;
         private bool[] TargetsEntries = new bool[] {false, false, false, false };
         private List<int> RandomNumbers = new List<int>();
-        private Timer PauseForStarAnimation;
 
 
         public GameWindow1(MainWindow main, WindowState windowState)
@@ -89,14 +88,14 @@ namespace MiniGames
                 ImagesOffspings[i - 1] = new Image();
                 BitmapImage image = new BitmapImage();
                 image.BeginInit();
-                image.UriSource = new Uri("Resources/Game1/A" + i.ToString() + ".jpg", UriKind.Relative);
+                image.UriSource = new Uri("/Resources/Game1/A" + i.ToString() + ".jpg", UriKind.Relative);
                 image.EndInit();
                 ImagesOffspings[i-1].Source = image;
 
                 ImagesParent[i - 1] = new Image();
                 image = new BitmapImage();
                 image.BeginInit();
-                image.UriSource = new Uri("Resources/Game1/B" + i.ToString() + ".jpg", UriKind.Relative);
+                image.UriSource = new Uri("/Resources/Game1/B" + i.ToString() + ".jpg", UriKind.Relative);
                 image.EndInit();
                 ImagesParent[i-1].Source = image;
                 ImagesParent[i - 1].MouseMove += ImageOffspringMouseMove;
@@ -137,7 +136,7 @@ namespace MiniGames
                 if (CheckRightPosition(sender))
                 {
                     (sender as Image).Source = e.Data.GetData(typeof(ImageSource)) as ImageSource;
-                    LastClicked.Visibility = Visibility.Hidden;
+                    GameGrid.Children.Remove(LastClicked);
                     CheckEndOfRound();
                 }
         }
@@ -147,9 +146,6 @@ namespace MiniGames
             if (!TargetsEntries.Contains(false))
             {
                 StarOpacityAnimation();
-                PauseForStarAnimation = new Timer(1000);
-                PauseForStarAnimation.Elapsed += PauseForStarAnimation_Elapsed;
-                PauseForStarAnimation.Start();
             }
         }
 
@@ -201,12 +197,27 @@ namespace MiniGames
             Level++;
             if (Level == 4)
             {
-                MessageBox.Show("END OF GAME!");
-                new ModalWindow("END OF GAME!", ModalWindowMode.TextShow).ShowDialog();
-                Close();
-                return;
+                bool? Result = new ModalWindow("Молодец! Хочешь сыграть еще раз?", ModalWindowMode.TextWithYesNoBtn).ShowDialog();
+                if ((bool)Result)
+                {
+                    Star1.Opacity = 0.2;
+                    Star2.Opacity = 0.2;
+                    Star3.Opacity = 0.2;
+                    Level = 1;
+                }
+                else
+                {
+                    Close();
+                    return;
+                }
             }
-            
+            for (int i = 0; i < 12; i++)
+            {
+                if (GameGrid.Children.Contains(ImagesOffspings[i]))
+                {
+                    GameGrid.Children.Remove(ImagesOffspings[i]);
+                }
+            }
             ShowPictures();
             RandomizeNumbers();
             TargetsEntries = new bool[] { false, false, false, false };
@@ -244,11 +255,6 @@ namespace MiniGames
         private void StarAnimation_Completed(object sender, EventArgs e)
         {
             NextLevel();
-        }
-
-        private void PauseForStarAnimation_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            PauseForStarAnimation.Stop();
         }
     }
 }

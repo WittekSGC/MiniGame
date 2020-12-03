@@ -28,7 +28,6 @@ namespace MiniGames
     {
         ModalWindowMode Mode;
 
-
         public ModalWindow(string text, ModalWindowMode mode)
         {
             InitializeComponent();
@@ -57,10 +56,10 @@ namespace MiniGames
 
         private void ShowYesNoButton()
         {
-            Button b = AddNewButton("Yes");
+            Button b = AddNewButton("Да");
             b.Click += B_True_Click;
             b.HorizontalAlignment = HorizontalAlignment.Left;
-            Button n = AddNewButton("No");
+            Button n = AddNewButton("Нет");
             n.Click += B_False_Click;
             n.HorizontalAlignment = HorizontalAlignment.Right;
         }
@@ -86,10 +85,12 @@ namespace MiniGames
             Button b = new Button();
             b.Content = name;
             b.HorizontalAlignment = HorizontalAlignment.Center;
-            b.Width = 200;
+            b.Width = 180;
+            b.Margin = new Thickness(10);
             b.VerticalAlignment = VerticalAlignment.Stretch;
             b.FontSize = 18;
             b.Background = new SolidColorBrush(Color.FromRgb(0, 255, 85));
+            b.Cursor = Cursors.Hand;
             Grid.SetColumn(b, 0);
             Grid.SetRow(b, 2);
             RootGrid.Children.Add(b);
