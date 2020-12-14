@@ -18,3 +18,5 @@ C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\GameWindow1.g.cs
 C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\GameWindow1.baml
 C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\ModalWindow.g.cs
 C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\ModalWindow.baml
+C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\GameWindow2.g.cs
+C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\GameWindow2.baml

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\zolud\Desktop\MiniGames\MiniGames\App.xaml
-3-1149715027
+4-1937346320
 21192496631
-8-1928317872
+10949064163
 141183416626
-GameWindow1.xaml;MainWindow.xaml;ModalWindow.xaml;
+GameWindow1.xaml;GameWindow2.xaml;MainWindow.xaml;ModalWindow.xaml;
 
-True
+False
 

@@ -60,6 +60,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GameWindow2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,8 +72,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GameLevel.cs" />
     <Compile Include="GameWindow1.xaml.cs">
       <DependentUpon>GameWindow1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameWindow2.xaml.cs">
+      <DependentUpon>GameWindow2.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -122,6 +130,27 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Resources\Game2\P10L.png" />
+    <Resource Include="Resources\Game2\P10R.png" />
+    <Resource Include="Resources\Game2\P1L.png" />
+    <Resource Include="Resources\Game2\P1R.png" />
+    <Resource Include="Resources\Game2\P2L.png" />
+    <Resource Include="Resources\Game2\P2R.png" />
+    <Resource Include="Resources\Game2\P3L.png" />
+    <Resource Include="Resources\Game2\P3R.png" />
+    <Resource Include="Resources\Game2\P4L.png" />
+    <Resource Include="Resources\Game2\P4R.png" />
+    <Resource Include="Resources\Game2\P5L.png" />
+    <Resource Include="Resources\Game2\P5R.png" />
+    <Resource Include="Resources\Game2\P6L.png" />
+    <Resource Include="Resources\Game2\P6R.png" />
+    <Resource Include="Resources\Game2\P7L.png" />
+    <Resource Include="Resources\Game2\P7R.png" />
+    <Resource Include="Resources\Game2\P8L.png" />
+    <Resource Include="Resources\Game2\P8R.png" />
+    <Resource Include="Resources\Game2\P9L.png" />
+    <Resource Include="Resources\Game2\P9R.png" />
+    <Resource Include="Resources\Game2\star.png" />
     <Resource Include="Resources\Game1\star.png" />
     <Resource Include="Resources\image0.jpg" />
     <Resource Include="Resources\Game1\unknown.jpg" />

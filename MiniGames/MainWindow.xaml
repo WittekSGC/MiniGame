@@ -11,7 +11,8 @@
         WindowStyle="ThreeDBorderWindow" 
         MinWidth="800" 
         MinHeight="600" 
-        Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+        Closing="Window_Closing" 
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Storyboard x:Key="OnHoverItem" AutoReverse="True"/>
     </Window.Resources>

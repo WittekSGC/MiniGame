@@ -27,10 +27,10 @@ namespace MiniGames
         private WindowState State;
 
         private int Level = 1;
+        private bool ManualClosing = true;
+        private Image LastClicked;
         private Image[] ImagesOffspings;
         private Image[] ImagesParent;
-
-        private Image LastClicked;
         private bool[] TargetsEntries = new bool[] {false, false, false, false };
         private List<int> RandomNumbers = new List<int>();
 
@@ -207,6 +207,7 @@ namespace MiniGames
                 }
                 else
                 {
+                    ManualClosing = false;
                     Close();
                     return;
                 }
@@ -255,6 +256,13 @@ namespace MiniGames
         private void StarAnimation_Completed(object sender, EventArgs e)
         {
             NextLevel();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (ManualClosing)
+                if (!(bool)new ModalWindow("Вы точно хотите прервать игру?", ModalWindowMode.TextWithYesNoBtn).ShowDialog())
+                    e.Cancel = true;
         }
     }
 }
