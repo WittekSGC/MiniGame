@@ -56,11 +56,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="GameWindow1.xaml">
+    <Page Include="Games\Game1\GameWindow1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameWindow2.xaml">
+    <Page Include="Games\Game2\GameWindow2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameWindow3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -72,12 +76,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GameLevel.cs" />
-    <Compile Include="GameWindow1.xaml.cs">
+    <Compile Include="Games\Game2\GameLevel.cs" />
+    <Compile Include="Games\Game1\GameWindow1.xaml.cs">
       <DependentUpon>GameWindow1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameWindow2.xaml.cs">
+    <Compile Include="Games\Game2\GameWindow2.xaml.cs">
       <DependentUpon>GameWindow2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameWindow3.xaml.cs">
+      <DependentUpon>GameWindow3.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -130,6 +137,33 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Resources\Game3\nullImage.png" />
+    <Resource Include="Resources\Game3\slot.png" />
+    <Resource Include="Resources\Game3\blue.png" />
+    <Resource Include="Resources\Game3\blueellipse.png" />
+    <Resource Include="Resources\Game3\bluerectangle.png" />
+    <Resource Include="Resources\Game3\bluerhomb.png" />
+    <Resource Include="Resources\Game3\bluetriangle.png" />
+    <Resource Include="Resources\Game3\ellipse.png" />
+    <Resource Include="Resources\Game3\green.png" />
+    <Resource Include="Resources\Game3\greenellipse.png" />
+    <Resource Include="Resources\Game3\greenrectangle.png" />
+    <Resource Include="Resources\Game3\greenrhomb.png" />
+    <Resource Include="Resources\Game3\greentriangle.png" />
+    <Resource Include="Resources\Game3\rectangle.png" />
+    <Resource Include="Resources\Game3\red.png" />
+    <Resource Include="Resources\Game3\redellipse.png" />
+    <Resource Include="Resources\Game3\redrectangle.png" />
+    <Resource Include="Resources\Game3\redrhomb.png" />
+    <Resource Include="Resources\Game3\redtriangle.png" />
+    <Resource Include="Resources\Game3\rhomb.png" />
+    <Resource Include="Resources\Game3\triangle.png" />
+    <Resource Include="Resources\Game3\yellow.png" />
+    <Resource Include="Resources\Game3\yellowellipse.png" />
+    <Resource Include="Resources\Game3\yellowrectangle.png" />
+    <Resource Include="Resources\Game3\yellowrhomb.png" />
+    <Resource Include="Resources\Game3\yellowtriangle.png" />
+    <Resource Include="Resources\Game3\background.jpg" />
     <Resource Include="Resources\Game2\P10L.png" />
     <Resource Include="Resources\Game2\P10R.png" />
     <Resource Include="Resources\Game2\P1L.png" />
