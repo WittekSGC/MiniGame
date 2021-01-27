@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Главное меню" 
         Height="600" 
-        Width="800" 
+        Width="937.391" 
         WindowStyle="ThreeDBorderWindow" 
         MinWidth="800" 
         MinHeight="600" 
@@ -18,7 +18,9 @@
     </Window.Resources>
 
     <Window.Background>
-        <SolidColorBrush Color="AliceBlue"/>
+        <!--<SolidColorBrush Color="AliceBlue"/>-->
+        <ImageBrush Stretch="UniformToFill" 
+                    ImageSource="/Resources/MainBackground.jpg"/>
     </Window.Background>
 
     <Grid x:Name="RootGrid">

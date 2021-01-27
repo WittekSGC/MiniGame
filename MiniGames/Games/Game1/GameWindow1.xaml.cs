@@ -21,7 +21,7 @@ namespace MiniGames
     /// </summary>
     public partial class GameWindow1 : Window
     {
-        private const string UnknownImage = @"Resources/Game1/unknown.jpg";
+        private const string UnknownImage = @"/Resources/Game1/unknown.jpg";
 
         private MainWindow Main;
         private WindowState State;

@@ -1,7 +1,6 @@
 C:\Users\zolud\Desktop\MiniGames\MiniGames\bin\Debug\MiniGames.exe.config
 C:\Users\zolud\Desktop\MiniGames\MiniGames\bin\Debug\MiniGames.exe
 C:\Users\zolud\Desktop\MiniGames\MiniGames\bin\Debug\MiniGames.pdb
-C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\MiniGames.csprojAssemblyReference.cache
 C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\MainWindow.g.cs
 C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\App.g.cs
 C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\MiniGames_MarkupCompile.cache
@@ -18,7 +17,10 @@ C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\ModalWindow.g.cs
 C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\ModalWindow.baml
 C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\Games\Game1\GameWindow1.g.cs
 C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\Games\Game2\GameWindow2.g.cs
-C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\GameWindow3.g.cs
 C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\Games\Game1\GameWindow1.baml
 C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\Games\Game2\GameWindow2.baml
-C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\GameWindow3.baml
+C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\Games\Game3\GameWindow3.g.cs
+C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\Games\Game3\GameWindow3.baml
+C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\GameWindow4.g.cs
+C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\GameWindow4.baml
+C:\Users\zolud\Desktop\MiniGames\MiniGames\obj\Debug\MiniGames.csprojAssemblyReference.cache

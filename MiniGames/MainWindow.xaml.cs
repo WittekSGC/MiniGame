@@ -25,7 +25,7 @@ namespace MiniGames
         private const int n = 9; //кол-во игр
         private Image[] images = new Image[n];
         private TextBlock[] textBlocks = new TextBlock[n];
-        private string[] GamesName = new string[] { "Что где растёт?", "Больше-меньше", "Цветные фигуры", "Game4", "Game5", "Game6", "Game7", "Game8", "Game9" };
+        private string[] GamesName = new string[] { "Что где растёт?", "Больше-меньше", "Цветные фигуры", "Найди отличия", "Game5", "Game6", "Game7", "Game8", "Game9" };
         private Window[] Games = new Window[n];
 
         public WindowState windowState;
@@ -135,8 +135,12 @@ namespace MiniGames
                         Games[1].Show();
                         break;
                     case 2:
-                        Games[1] = new GameWindow3(this, WindowState);
-                        Games[1].Show();
+                        Games[2] = new GameWindow3(this, WindowState);
+                        Games[2].Show();
+                        break;
+                    case 3:                        
+                        Games[3] = new GameWindow4(this, WindowState);
+                        Games[3].Show();
                         break;
                     default:
                         MessageBox.Show("Other keys");

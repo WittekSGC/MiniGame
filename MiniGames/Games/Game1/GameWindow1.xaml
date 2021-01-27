@@ -95,17 +95,17 @@
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Image Source="Resources/Game1/star.png"
+            <Image Source="/Resources/Game1/star.png"
                    Grid.Column="0"
                    x:Name="Star1"
                    Margin="5"
                    Opacity="0.2" />
-            <Image Source="Resources/Game1/star.png"
+            <Image Source="/Resources/Game1/star.png"
                    Grid.Column="1"
                    x:Name="Star2"
                    Margin="5" 
                    Opacity="0.2"/>
-            <Image Source="Resources/Game1/star.png"
+            <Image Source="/Resources/Game1/star.png"
                    Grid.Column="2"
                    x:Name="Star3"
                    Margin="5" 
