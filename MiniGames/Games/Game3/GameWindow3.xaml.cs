@@ -1,22 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MiniGames
 {
-    /// <summary>
-    /// Логика взаимодействия для GameWindow3.xaml
-    /// </summary>
     public partial class GameWindow3 : Window
     {
         MainWindow Main;
@@ -24,6 +15,8 @@ namespace MiniGames
         Image[] TargetImages = new Image[16];
         Image[] Slots = new Image[16];
         Image LastClicked;
+        readonly string NullImage = "/Resources/Game3/nullImage.png";
+        BitmapImage NullImg;
 
         public GameWindow3(MainWindow main, WindowState state)
         {
@@ -37,12 +30,12 @@ namespace MiniGames
         private void CreateSlots()
         {
             int counter = 0;
-            BitmapImage nullImage = new BitmapImage();
+            NullImg = new BitmapImage();
             try
             {
-                nullImage.BeginInit();
-                nullImage.UriSource = new Uri("/Resources/Game3/nullImage.png", UriKind.Relative);
-                nullImage.EndInit();
+                NullImg.BeginInit();
+                NullImg.UriSource = new Uri(NullImage, UriKind.Relative);
+                NullImg.EndInit();
             }
             catch (Exception ex)
             {
@@ -89,17 +82,18 @@ namespace MiniGames
                     }
                     Slots[counter] = new Image()
                     {
+                        Name = name,
                         AllowDrop = true,
-                        Margin = new Thickness(15), //при вставке сделать 15
+                        Margin = new Thickness(15), 
                         VerticalAlignment = VerticalAlignment.Stretch,
                         HorizontalAlignment = HorizontalAlignment.Stretch,
-                        Source = nullImage,
-                        Name = name
+                        Source = NullImg,
                     };
                     Grid.SetColumn(Slots[counter], i);
                     Grid.SetRow(Slots[counter], j);
                     Slots[counter].Drop += SlotDrop;
-                    GameGrid.Children.Add(Slots[counter]);
+                    int ret = GameGrid.Children.Add(Slots[counter]);
+                    //MessageBox.Show(ret.ToString());
                     counter++;
                 }
             }
@@ -108,12 +102,51 @@ namespace MiniGames
         private void SlotDrop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(typeof(ImageSource)))
-                if (CheckRightPosition(sender))
+            {
+                if ((sender as Image).Source.ToString().Contains(NullImage))
                 {
+                    if ((sender as Image).Parent is Grid)
+                    {
+                        //MessageBox.Show((!(sender as Image).Source.ToString().Contains(NullImage)).ToString() + (sender as Image).Source.ToString());
+                        
+                        LastClicked.Source = NullImg;
+                    }
                     (sender as Image).Source = e.Data.GetData(typeof(ImageSource)) as ImageSource;
+                    (sender as Image).MouseMove += TargetImageMove;
                     TargetImagesWrapPanel.Children.Remove(LastClicked);
-                    CheckEndOfRound();
                 }
+                else
+                {
+                    //MessageBox.Show("Else");
+                    //извлечение имени текущего элемента
+                    string temp = (sender as Image).Source.ToString();
+                    temp = temp.Remove(0, temp.LastIndexOf('/') + 1);
+                    temp = temp.Remove(temp.IndexOf('.'));
+
+                    (sender as Image).Source = e.Data.GetData(typeof(ImageSource)) as ImageSource;
+
+                    // создание изображения для замены
+                    BitmapImage imgSrc = new BitmapImage();
+                    string path = "/Resources/Game3/";
+                    imgSrc.BeginInit();
+                    imgSrc.UriSource = new Uri(path+temp+".png", UriKind.Relative);
+                    imgSrc.EndInit();
+                    Image swap = new Image()
+                    {
+                        Source = imgSrc,
+                        Margin = new Thickness(10),
+                        Width = 64,
+                        Height = 64,
+                        Cursor = Cursors.Hand
+                    };
+                    swap.MouseMove += TargetImageMove;
+
+                    //добавление замененного элемента в список и удаление занесенного
+                    TargetImagesWrapPanel.Children.Add(swap);
+                    TargetImagesWrapPanel.Children.Remove(LastClicked);
+                    LastClicked.Source = NullImg;
+                }
+            }
         }
 
         private void CheckEndOfRound()
@@ -131,10 +164,9 @@ namespace MiniGames
                 {
                     ManualClosing = false;
                     Close();
-                    return;
                 }
             }
-            
+
         }
 
         private void RemoveSlots()
@@ -146,14 +178,31 @@ namespace MiniGames
             Slots = new Image[16];
         }
 
-        private bool CheckRightPosition(object sender)
+        private bool CheckRightPositions(int I, int J) //private bool
         {
-            string temp = LastClicked.Source.ToString();
-            temp = temp.Remove(0, temp.LastIndexOf('/') + 1);
-            temp = temp.Remove(temp.IndexOf('.'));
-            bool result = false;
-            if (temp == (sender as Image).Name) result = true;
-            return result;/////////////////////////
+            int counter = 0;
+            bool end = false;
+
+            for (int i = 0; i <4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (I == i && J == j)
+                    {
+                        end = true;
+                        break;
+                    }
+                    counter++;
+                }
+                if (end)
+                    break;
+            }
+
+            Image check = GameGrid.Children[counter + 24] as Image;
+            if (check.Source.ToString().Contains(check.Name))
+                return true;
+            else
+                return false;
         }
 
         private void InitializeTargetImages()
@@ -161,6 +210,7 @@ namespace MiniGames
             BitmapImage imgSrc;
             string path;
             int counter = 0;
+
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
@@ -261,6 +311,11 @@ namespace MiniGames
                     Main.WindowState = WindowState;
                     Main.Show();
                 }
+            else
+            {
+                Main.WindowState = WindowState;
+                Main.Show();
+            }
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -272,7 +327,7 @@ namespace MiniGames
         {
             int NextWidthTarget;
             int NextSizeColumn;
-            if (ActualWidth > 1200) NextWidthTarget = 96; 
+            if (ActualWidth > 1200) NextWidthTarget = 96;
             else NextWidthTarget = 64;
             if (!(TargetImages[0].Width == NextWidthTarget))
             {
@@ -305,6 +360,81 @@ namespace MiniGames
         private void Window_StateChanged(object sender, EventArgs e)
         {
             RecreateSize();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string rs = "";
+            bool b;
+            bool endGame = true;
+
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    b = CheckRightPositions(i, j);
+                    //rs += b.ToString() + ", ";
+
+                    if (!b) { 
+                        ReturnFigureToPanel(i, j);
+                        endGame = false;
+                    }
+                }
+            }
+            //MessageBox.Show(rs);
+
+            if (endGame)
+                CheckEndOfRound();
+        }
+
+        private void ReturnFigureToPanel(int I, int J)
+        {
+            int counter = 0;
+            bool end = false;
+
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (I == i && J == j)
+                    {
+                        end = true;
+                        break;
+                    }
+                    counter++;
+                }
+                if (end)
+                    break;
+            }
+
+            //извлечение имени текущего элемента
+            string temp = (GameGrid.Children[counter + 24] as Image).Source.ToString();
+
+            //ЕСЛИ УЖЕ КАРТИНКА NULL
+            if (temp.Contains(NullImage))
+                return;
+
+            temp = temp.Remove(0, temp.LastIndexOf('/') + 1);
+            temp = temp.Remove(temp.IndexOf('.'));
+
+            (GameGrid.Children[counter + 24] as Image).Source = NullImg;
+
+            // создание изображения для замены
+            BitmapImage imgSrc = new BitmapImage();
+            string path = "/Resources/Game3/";
+            imgSrc.BeginInit();
+            imgSrc.UriSource = new Uri(path + temp + ".png", UriKind.Relative);
+            imgSrc.EndInit();
+            Image swap = new Image()
+            {
+                Source = imgSrc,
+                Margin = new Thickness(10),
+                Width = 64,
+                Height = 64,
+                Cursor = Cursors.Hand
+            };
+            swap.MouseMove += TargetImageMove;
+            TargetImagesWrapPanel.Children.Add(swap);
         }
     }
 }

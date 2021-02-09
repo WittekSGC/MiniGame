@@ -165,6 +165,17 @@
 
         <WrapPanel Grid.Column="1"
                    x:Name="TargetImagesWrapPanel"
-                   VerticalAlignment="Center"/>
+                   VerticalAlignment="Center">
+        </WrapPanel>
+
+        <Button Grid.Column="1" 
+                VerticalAlignment="Bottom"
+                Margin="12"
+                Padding="12" BorderThickness="2" ClipToBounds="True" Click="Button_Click">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="20" Direction="355" ShadowDepth="10"/>
+            </Button.Effect>
+            Проверить
+        </Button>
     </Grid>
 </Window>
