@@ -57,32 +57,31 @@
 
         <!--start images-->
         <Image Source="/Resources/Game4/part1left.png"
+               Width="360"
+               Height="258"
+               Grid.Column="0"
+               Grid.Row="1" 
+               VerticalAlignment="Center"/>
+        <Grid Width="360"
+               Height="258"
                Grid.Column="0"
                Grid.Row="1"
-               Margin="50"
-               x:Name="Left"
-               Cursor="Hand"/>
+               x:Name="LeftClicks"
+              >
+        </Grid>
+
         <Image Source="/Resources/Game4/part2right.png"
+               Width="360"
+               Height="258"
+               Grid.Column="1"
+               Grid.Row="1" 
+               VerticalAlignment="Center"/>
+        <Grid Width="360"
+               Height="258"
                Grid.Column="1"
                Grid.Row="1"
-               Margin="30"
-               x:Name="Right"
-               Cursor="Hand"/>
-
-        <!--forms click-->
-        <Grid x:Name="ClickGrid"
-              Grid.Row="1"
-              Margin="50"
+               x:Name="RightClicks"
               >
-            <Rectangle  Fill="Black" Height="40" Width="40" Margin="80,52,176,177"/>
         </Grid>
-        <ListBox Margin="2,8,156,0" x:Name="ist"/>
-        <!--<Canvas Grid.Row="1"
-                Width="50"
-                Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
-            <Rectangle Fill="Black" 
-                       Width="50" 
-                       Height="50"/>
-        </Canvas>-->
     </Grid>
 </Window>
