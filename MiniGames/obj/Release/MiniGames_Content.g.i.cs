@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/closebutton.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/game1/background.jpg")]
 
 

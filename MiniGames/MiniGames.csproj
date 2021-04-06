@@ -60,7 +60,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="GameWindow4.xaml">
+    <Compile Include="Games\Game5\GameWindow5.xaml.cs">
+      <DependentUpon>GameWindow5.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Games\Game4\GameWindow4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -76,6 +79,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GameWindow6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,7 +91,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GameWindow4.xaml.cs">
+    <Compile Include="Games\Game4\GameWindow4.xaml.cs">
       <DependentUpon>GameWindow4.xaml</DependentUpon>
     </Compile>
     <Compile Include="Games\Game2\GameLevel.cs" />
@@ -97,11 +104,18 @@
     <Compile Include="Games\Game3\GameWindow3.xaml.cs">
       <DependentUpon>GameWindow3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GameWindow6.xaml.cs">
+      <DependentUpon>GameWindow6.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Games\Game5\GameWindow5.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,6 +161,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\Font\BalsamiqSans-Bold.ttf" />
+    <Resource Include="Resources\Font\soft_sans_serif_7.ttf" />
     <Resource Include="Resources\Font\EarthsMightiest.otf" />
   </ItemGroup>
   <ItemGroup>
@@ -155,7 +171,6 @@
   <ItemGroup>
     <Resource Include="Resources\image1.jpg" />
     <Resource Include="Resources\image2.jpg" />
-    <Resource Include="Resources\image3.jpg" />
     <Resource Include="Resources\image4.jpg" />
     <Resource Include="Resources\image5.jpg" />
     <Resource Include="Resources\image6.jpg" />
@@ -164,6 +179,60 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Resources\Game6\train.png" />
+    <Resource Include="Resources\Game6\background.png" />
+    <Resource Include="Resources\Game6\alphabet\!empty.png" />
+    <Resource Include="Resources\Game6\alphabet\Ё.png" />
+    <Resource Include="Resources\Game6\alphabet\А.png" />
+    <Resource Include="Resources\Game6\alphabet\Б.png" />
+    <Resource Include="Resources\Game6\alphabet\В.png" />
+    <Resource Include="Resources\Game6\alphabet\Г.png" />
+    <Resource Include="Resources\Game6\alphabet\Д.png" />
+    <Resource Include="Resources\Game6\alphabet\Е.png" />
+    <Resource Include="Resources\Game6\alphabet\Ж.png" />
+    <Resource Include="Resources\Game6\alphabet\З.png" />
+    <Resource Include="Resources\Game6\alphabet\И.png" />
+    <Resource Include="Resources\Game6\alphabet\Й.png" />
+    <Resource Include="Resources\Game6\alphabet\К.png" />
+    <Resource Include="Resources\Game6\alphabet\Л.png" />
+    <Resource Include="Resources\Game6\alphabet\М.png" />
+    <Resource Include="Resources\Game6\alphabet\Н.png" />
+    <Resource Include="Resources\Game6\alphabet\О.png" />
+    <Resource Include="Resources\Game6\alphabet\П.png" />
+    <Resource Include="Resources\Game6\alphabet\Р.png" />
+    <Resource Include="Resources\Game6\alphabet\С.png" />
+    <Resource Include="Resources\Game6\alphabet\Т.png" />
+    <Resource Include="Resources\Game6\alphabet\У.png" />
+    <Resource Include="Resources\Game6\alphabet\Ф.png" />
+    <Resource Include="Resources\Game6\alphabet\Х.png" />
+    <Resource Include="Resources\Game6\alphabet\Ц.png" />
+    <Resource Include="Resources\Game6\alphabet\Ч.png" />
+    <Resource Include="Resources\Game6\alphabet\Ш.png" />
+    <Resource Include="Resources\Game6\alphabet\Щ.png" />
+    <Resource Include="Resources\Game6\alphabet\Э.png" />
+    <Resource Include="Resources\Game6\alphabet\Ю.png" />
+    <Resource Include="Resources\Game6\alphabet\Я.png" />
+    <Resource Include="Resources\Game5\check.png" />
+    <Resource Include="Resources\Game5\lvl3\1-1.png" />
+    <Resource Include="Resources\Game5\lvl3\1-2.png" />
+    <Resource Include="Resources\Game5\lvl3\2-1.png" />
+    <Resource Include="Resources\Game5\lvl3\2-2.png" />
+    <Resource Include="Resources\Game5\lvl3\3-1.png" />
+    <Resource Include="Resources\Game5\lvl3\3-2.png" />
+    <Resource Include="Resources\Game5\lvl2\1-1.png" />
+    <Resource Include="Resources\Game5\lvl2\1-2.png" />
+    <Resource Include="Resources\Game5\lvl2\2-1.png" />
+    <Resource Include="Resources\Game5\lvl2\2-2.png" />
+    <Resource Include="Resources\Game5\lvl2\3-1.png" />
+    <Resource Include="Resources\Game5\lvl2\3-2.png" />
+    <Resource Include="Resources\Game5\lvl1\1-1.png" />
+    <Resource Include="Resources\Game5\lvl1\1-2.png" />
+    <Resource Include="Resources\Game5\lvl1\2-1.png" />
+    <Resource Include="Resources\Game5\lvl1\2-2.png" />
+    <Resource Include="Resources\Game5\lvl1\3-1.png" />
+    <Resource Include="Resources\Game5\lvl1\3-2.png" />
+    <Resource Include="Resources\Game5\background.png" />
+    <Resource Include="Resources\image3.jpg" />
     <Resource Include="Resources\MainBackground.jpg" />
     <Resource Include="Resources\Game4\circled.png" />
     <Resource Include="Resources\AppIcon.ico" />
