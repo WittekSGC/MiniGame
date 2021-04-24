@@ -25,7 +25,7 @@ namespace MiniGames
         private const int n = 9; //кол-во игр
         private Image[] images = new Image[n];
         private TextBlock[] textBlocks = new TextBlock[n];
-        private string[] GamesName = new string[] { "Что где растёт?", "Больше-меньше", "Цветные фигуры", "Найди отличия", "Сосчитай лепестки", "Game6", "Game7", "Game8", "Game9" };
+        private string[] GamesName = new string[] { "Что где растёт?", "Больше-меньше", "Цветные фигуры", "Найди отличия", "Сосчитай лепестки", "Паровозик", "Game7", "Game8", "Game9" };
         private Window[] Games = new Window[n];
 
         public WindowState windowState;

@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         
         Title="Паровозик" 
-        Height="600" 
-        Width="800" 
-        MinHeight="600" 
-        MinWidth="800" 
-        Closing="Window_Closing">
+        Height="620" 
+        Width="816" 
+        MinHeight="620" 
+        MinWidth="816" 
+        Closing="Window_Closing" SizeChanged="Window_SizeChanged" StateChanged="Window_StateChanged">
 
     <!--ФОН-->
     <Window.Background>
@@ -44,161 +44,227 @@
 
         <!--Сетка игры-->
         <Grid x:Name="GameGrid"
-              Grid.Row="1">
+              Grid.Row="1"
+              ClipToBounds="True">
 
             <!--фон сетки игры-->
-            <Image Source="Resources/Game6/background.png" Stretch="Fill"/>
+            <Image Source="Resources/Game6/background.png" 
+                   Stretch="Fill" 
+                   Grid.ColumnSpan="2"/>
 
-            <!--паровозик-->
-            <Image Source="Resources/Game6/train.png" 
+            <Canvas x:Name="TrainPanel"
+                    Margin="0">
+
+                <!--паровозик-->
+                <Image Source="Resources/Game6/train.png" 
                    Width="520" 
-                   Height="141"
-                   Margin="0,207,0,0"
-                   x:Name="TrainImage" RenderTransformOrigin="0.5,0.5">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
+                   Height="142"
+                   x:Name="TrainImage" 
+                   RenderTransformOrigin="0.5,0.5" 
+                   Grid.ColumnSpan="2" 
+                       Canvas.Left="136"
+                       Canvas.Top="238"
+                   >
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
 
-            <!--6 картинок для выбора-->
-            <Image x:Name="ImageAnswer1" 
-                   MouseLeftButtonDown="DragDropActivation" 
-                   Source="Resources/Game6/alphabet/!empty.png" Margin="9,62,680,197"
-                   Width="84" 
-                   Height="84" 
-                   Opacity="0"/>
-            <Image x:Name="ImageAnswer2" 
-                   MouseLeftButtonDown="DragDropActivation" 
-                   Source="Resources/Game6/alphabet/!empty.png" 
-                   Margin="143,21,546,237" 
-                   Width="84" 
-                   Height="84" 
-                   Opacity="0"/>
-            <Image x:Name="ImageAnswer3" 
-                   MouseLeftButtonDown="DragDropActivation" 
-                   Source="Resources/Game6/alphabet/!empty.png" 
-                   Margin="274,98,415,160"
-                   Width="84" 
-                   Height="84" 
-                   Opacity="0"/>
-            <Image x:Name="ImageAnswer4" 
-                   MouseLeftButtonDown="DragDropActivation" 
-                   Source="Resources/Game6/alphabet/!empty.png" Margin="408,62,280,197" 
-                   Width="84" 
-                   Height="84" 
-                   Opacity="0"/>
-            <Image x:Name="ImageAnswer5" 
-                   MouseLeftButtonDown="DragDropActivation" 
-                   Source="Resources/Game6/alphabet/!empty.png" 
-                   Margin="549,21,140,237" 
-                   Width="84" 
-                   Height="84" 
-                   Opacity="0"/>
-            <Image x:Name="ImageAnswer6" 
-                   MouseLeftButtonDown="DragDropActivation" 
-                   Source="Resources/Game6/alphabet/!empty.png" 
-                   Margin="679,62,10,197"
-                   Width="84" 
-                   Height="84" 
-                   Opacity="0"/>
-
-            <!--Места для ответов (TextBlock + Image)-->
-            <Image x:Name="SlotImage1"
-                   Source="Resources/Game6/alphabet/!empty.png"
-                   Margin="308,244,404,45" 
-                   AllowDrop="True" 
-                   Opacity="0"
-                   Drop="SlotDragDrop" 
-                   Panel.ZIndex="1"
-                  />
-            <TextBlock x:Name="FirstTextBlock" 
-                       FontFamily="/MiniGames;component/Resources/Font/#Balsamiq Sans" 
+                <!--Места для ответов (TextBlock + Image)-->
+                <Image x:Name="SlotImage1"
+                        Source="Resources/Game6/alphabet/!empty.png"                   
+                        Width="66" 
+                        AllowDrop="True" 
+                        Opacity="0"
+                        Drop="SlotDragDrop" 
+                        Panel.ZIndex="1" 
+                        RenderTransformOrigin="0.5,0.5" 
+                        Canvas.Left="317" 
+                        Canvas.Top="270"
+                  >
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBlock x:Name="FirstTextBlock" 
+                       FontFamily="/MiniGames;component/Resources/Font/#Foma_flibustier" 
                        FontSize="64" 
                        HorizontalAlignment="Center" 
-                       VerticalAlignment="Center" 
-                       Margin="316,246,410,50" 
+                       VerticalAlignment="Center"
                        Width="66" 
                        Height="73" 
                        Foreground="Magenta" 
                        TextAlignment="Center" 
-                       Opacity="0" 
-                       RenderTransformOrigin="0.5,0.5">
-                <TextBlock.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </TextBlock.RenderTransform>
-                <Run>А</Run>
-            </TextBlock>
-            <Image x:Name="SlotImage2"
-                   Source="Resources/Game6/alphabet/!empty.png"
-                   Margin="433,244,279,45"
+                       RenderTransformOrigin="0.5,0.5" 
+                           Canvas.Left="316" 
+                           Canvas.Top="266" 
+                           LineHeight="100" 
+                           Opacity="0">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    А
+                </TextBlock>
+                <Image x:Name="SlotImage2"
+                   Source="Resources/Game6/alphabet/!empty.png" 
+                       Width="66" 
+                       Height="73" 
                    Drop="SlotDragDrop"  
                    AllowDrop="True" 
                    Opacity="0" 
-                   Panel.ZIndex="1" />
-            <TextBlock x:Name="SecondTextBlock" 
-                       FontFamily="/MiniGames;component/Resources/Font/#Balsamiq Sans" 
+                   Panel.ZIndex="1" 
+                   Grid.ColumnSpan="2" 
+                   RenderTransformOrigin="0.5,0.5" 
+                       Canvas.Left="442" 
+                       Canvas.Top="264" >
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBlock x:Name="SecondTextBlock" 
+                       FontFamily="/MiniGames;component/Resources/Font/#Foma_flibustier" 
                        FontSize="64" 
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Center" 
-                       Margin="441,246,285,50" 
                        Width="66" 
-                       Foreground="Magenta" 
                        Height="73" 
-                       TextAlignment="Center" Opacity="0" RenderTransformOrigin="0.5,0.5" >
-                <TextBlock.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </TextBlock.RenderTransform>
-                <Run>Б</Run>
-            </TextBlock>
-            <Image x:Name="SlotImage3"
+                       Foreground="Magenta" 
+                       TextAlignment="Center" 
+                           RenderTransformOrigin="0.5,0.5" 
+                           Grid.Column="1" 
+                           Canvas.Left="441" 
+                           Canvas.Top="266" 
+                           LineHeight="100" 
+                           Opacity="0" >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    Б
+                </TextBlock>
+                <Image x:Name="SlotImage3"
                    Source="Resources/Game6/alphabet/!empty.png"
-                   Margin="558,244,155,45" 
+                   
+                       Width="66" 
+                       Height="69"  
                    AllowDrop="True"
                    Drop="SlotDragDrop"
                    Opacity="0" 
-                   Panel.ZIndex="1"  />
-            <TextBlock x:Name="ThirdTextBlock" 
-                       FontFamily="/MiniGames;component/Resources/Font/#Balsamiq Sans" 
+                   Panel.ZIndex="1" 
+                       Grid.Column="1" 
+                       RenderTransformOrigin="0.5,0.5" 
+                       Canvas.Left="566" 
+                       Canvas.Top="267"  >
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBlock x:Name="ThirdTextBlock" 
+                       FontFamily="/MiniGames;component/Resources/Font/#Foma_flibustier" 
                        FontSize="64" 
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Center" 
-                       Margin="566,246,160,47" 
                        Width="66" 
+                       Height="69" 
                        Foreground="Magenta" 
-                       Height="76" 
-                       TextAlignment="Center" Opacity="0" RenderTransformOrigin="0.5,0.5" >
-                <TextBlock.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </TextBlock.RenderTransform>
-                <Run>В</Run>
-            </TextBlock>
+                       TextAlignment="Center" 
+                           RenderTransformOrigin="0.5,0.5" 
+                           Grid.Column="1"
+                           Canvas.Left="566"
+                           Canvas.Top="270" 
+                           LineHeight="100" 
+                           Text="Ё" 
+                           Opacity="0" >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Canvas>
 
+            <!--6 картинок для выбора-->
+            <Image x:Name="ImageAnswer1" 
+                   MouseLeftButtonDown="DragDropActivation" 
+                   Source="Resources/Game6/alphabet/!empty.png" 
+                   Margin="62,72,662,233"
+                   Width="80" 
+                   Height="80" 
+                   Cursor="Hand" 
+                   Opacity="0" 
+                   Stretch="UniformToFill"/>
+            <Image x:Name="ImageAnswer2" 
+                   MouseLeftButtonDown="DragDropActivation" 
+                   Source="Resources/Game6/alphabet/!empty.png" 
+                   Margin="186,72,538,233" 
+                   Width="80" 
+                   Height="80" Cursor="Hand" Opacity="0" Stretch="UniformToFill"/>
+            <Image x:Name="ImageAnswer3" 
+                   MouseLeftButtonDown="DragDropActivation" 
+                   Source="Resources/Game6/alphabet/!empty.png" 
+                   Margin="299,72,425,233"
+                   Width="80" 
+                   Height="80" Cursor="Hand" Opacity="0" Stretch="UniformToFill"/>
+            <Image x:Name="ImageAnswer4" 
+                   MouseLeftButtonDown="DragDropActivation" 
+                   Source="Resources/Game6/alphabet/!empty.png" 
+                   Margin="414,72,310,233" 
+                   Width="80" 
+                   Height="80" 
+                   Cursor="Hand" 
+                   Opacity="0" 
+                   Stretch="UniformToFill"/>
+            <Image x:Name="ImageAnswer5" 
+                   MouseLeftButtonDown="DragDropActivation" 
+                   Source="Resources/Game6/alphabet/!empty.png" 
+                   Margin="535,72,189,233" 
+                   Width="80" 
+                   Height="80" Cursor="Hand" Opacity="0" Stretch="UniformToFill"/>
+            <Image x:Name="ImageAnswer6" 
+                   MouseLeftButtonDown="DragDropActivation" 
+                   Source="Resources/Game6/alphabet/!empty.png" 
+                   Margin="656,72,68,233"
+                   Width="80" 
+                   Height="80" Cursor="Hand" Opacity="0" Stretch="UniformToFill"/>
         </Grid>
 
-        <!--панель звездочек-->
+        <!--Панель для звездочек-->
         <Rectangle Grid.Column="0"
                    Grid.Row="2"
-                   Opacity="0.9" Grid.ColumnSpan="3">
+                   Opacity="0.9" 
+                   Grid.ColumnSpan="3">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                     <GradientStop Color="#ffff00" Offset="0" />
@@ -206,5 +272,10 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
+        <StackPanel x:Name="StarsPanel" 
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Orientation="Horizontal"
+                    Margin="20 0 0 0"/>
     </Grid>
 </Window>

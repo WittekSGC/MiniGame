@@ -364,7 +364,6 @@ namespace MiniGames
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string rs = "";
             bool b;
             bool endGame = true;
 
@@ -373,7 +372,6 @@ namespace MiniGames
                 for (int j = 0; j < 4; j++)
                 {
                     b = CheckRightPositions(i, j);
-                    //rs += b.ToString() + ", ";
 
                     if (!b) { 
                         ReturnFigureToPanel(i, j);
@@ -381,7 +379,6 @@ namespace MiniGames
                     }
                 }
             }
-            //MessageBox.Show(rs);
 
             if (endGame)
                 CheckEndOfRound();

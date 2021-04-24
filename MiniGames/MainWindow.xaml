@@ -53,7 +53,7 @@
                    Margin="179,16,178,15" 
                    Height="74" 
                    Width="435"
-                   x:Name="Title" 
+                   x:Name="TitleTB" 
                    TextAlignment="Center">
             УЧИСЬ ИГРАЯ
         </TextBlock>
