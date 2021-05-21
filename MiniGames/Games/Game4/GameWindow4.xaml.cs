@@ -140,12 +140,12 @@ namespace MiniGames
         {
             if (ManualClosing)
                 if (!(bool)new ModalWindow("Вы точно хотите прервать игру?", ModalWindowMode.TextWithYesNoBtn).ShowDialog())
-                    e.Cancel = true;
-                else
                 {
-                    Main.WindowState = WindowState;
-                    Main.Show();
+                    e.Cancel = true;
+                    return;
                 }
+            Main.WindowState = WindowState;
+            Main.Show();
         }
 
         /// <summary>
@@ -286,7 +286,6 @@ namespace MiniGames
             {
                 ManualClosing = false;
                 Close();
-                return;
             }
         }
     }

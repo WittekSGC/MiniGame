@@ -150,6 +150,10 @@ namespace MiniGames
                         Games[6] = new GameWindow6(this, WindowState);
                         Games[6].Show();
                         break;
+                    case 6:
+                        Games[7] = new GameWindow7(this, WindowState);
+                        Games[7].Show();
+                        break;
                     default:
                         MessageBox.Show("Other keys");
                         break;

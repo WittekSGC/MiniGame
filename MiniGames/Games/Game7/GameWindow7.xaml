@@ -1,0 +1,77 @@
+﻿<Window x:Class="MiniGames.GameWindow7"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniGames"
+        mc:Ignorable="d"
+        Title="Game7" 
+        MinHeight="700" MinWidth="900"
+        Height="700" Width="900"
+        Closing="Window_Closing">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#FF4086FF" Offset="0"/>
+            <GradientStop Color="#FFFFFF0F" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    
+    <Grid x:Name="RootGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Надпись сверху-->
+        <TextBlock Grid.ColumnSpan="3"
+                   Text="Собери зверюшку"
+                       FontSize="60"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold"
+                       FontFamily="/MiniGames;component/Resources/Font/#Earth's Mightiest Cyrillic" 
+                       x:Name="MainTitle">
+        </TextBlock>
+
+        <!--Панель звездочек-->
+        <Rectangle Grid.Column="0"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="20"
+                   Opacity="0.9">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#ffff00" Offset="0" />
+                    <GradientStop Color="#ff7700" Offset="1" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <StackPanel x:Name="StarsPanel" 
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Orientation="Horizontal"
+                    Margin="20 0 0 0"/>
+
+        <Image Source="/Resources/Game7/background.jpg"
+               Grid.Row="1"
+               Stretch="Fill"/>
+
+        <!--Основная часть-->
+        <Canvas x:Name="MainCanvas"
+                Grid.Row="1"
+                Margin="0,100,0,0"
+                >
+        </Canvas>
+
+        <!--Детали-->
+        <WrapPanel x:Name="DetailsPanel" 
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Orientation="Horizontal"
+                    />
+    </Grid>
+</Window>

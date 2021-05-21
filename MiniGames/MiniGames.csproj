@@ -63,9 +63,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Games\Game7\GameWindow7.xaml.cs">
+      <DependentUpon>GameWindow7.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Games\Game5\GameWindow5.xaml.cs">
       <DependentUpon>GameWindow5.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Games\Game7\Tasks\Task1.cs" />
+    <Page Include="Games\Game7\GameWindow7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Games\Game4\GameWindow4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -82,7 +90,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameWindow6.xaml">
+    <Page Include="Games\Game6\GameWindow6.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -107,9 +115,12 @@
     <Compile Include="Games\Game3\GameWindow3.xaml.cs">
       <DependentUpon>GameWindow3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameWindow6.xaml.cs">
+    <Compile Include="Games\Game6\GameWindow6.xaml.cs">
       <DependentUpon>GameWindow6.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Games\Game7\Tasks\Task2.cs" />
+    <Compile Include="Games\Game7\Tasks\Task3.cs" />
+    <Compile Include="Games\Game7\Tasks\TaskPattern.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -180,6 +191,29 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Resources\Game7\background.jpg" />
+    <Resource Include="Resources\Game7\Task3\backLegs.png" />
+    <Resource Include="Resources\Game7\Task3\body.png" />
+    <Resource Include="Resources\Game7\Task3\empty_backLegs.png" />
+    <Resource Include="Resources\Game7\Task3\empty_body.png" />
+    <Resource Include="Resources\Game7\Task3\empty_frontLegs.png" />
+    <Resource Include="Resources\Game7\Task3\empty_head.png" />
+    <Resource Include="Resources\Game7\Task3\empty_mane.png" />
+    <Resource Include="Resources\Game7\Task3\empty_neck.png" />
+    <Resource Include="Resources\Game7\Task3\empty_tail.png" />
+    <Resource Include="Resources\Game7\Task3\frontLegs.png" />
+    <Resource Include="Resources\Game7\Task3\head.png" />
+    <Resource Include="Resources\Game7\Task3\mane.png" />
+    <Resource Include="Resources\Game7\Task3\neck.png" />
+    <Resource Include="Resources\Game7\Task3\tail.png" />
+    <Resource Include="Resources\Game7\Task1\empty_backLegs.png" />
+    <Resource Include="Resources\Game7\Task1\empty_body.png" />
+    <Resource Include="Resources\Game7\Task1\empty_frontLegs.png" />
+    <Resource Include="Resources\Game7\Task1\empty_head.png" />
+    <Resource Include="Resources\Game7\Task1\head.png" />
+    <Resource Include="Resources\Game7\Task1\backLegs.png" />
+    <Resource Include="Resources\Game7\Task1\frontLegs.png" />
+    <Resource Include="Resources\Game7\Task1\body.png" />
     <Resource Include="Resources\image5.jpg" />
     <Resource Include="Resources\Game6\train.png" />
     <Resource Include="Resources\Game6\background.png" />
@@ -315,6 +349,22 @@
     <Resource Include="Resources\Game1\B7.jpg" />
     <Resource Include="Resources\Game1\B8.jpg" />
     <Resource Include="Resources\Game1\B9.jpg" />
+    <Resource Include="Resources\Game7\Task2\body.png" />
+    <Resource Include="Resources\Game7\Task2\empty_body.png" />
+    <Resource Include="Resources\Game7\Task2\empty_frontLegs.png" />
+    <Resource Include="Resources\Game7\Task2\empty_head.png" />
+    <Resource Include="Resources\Game7\Task2\empty_leftEar.png" />
+    <Resource Include="Resources\Game7\Task2\empty_nose.png" />
+    <Resource Include="Resources\Game7\Task2\empty_rightEar.png" />
+    <Resource Include="Resources\Game7\Task2\empty_tail.png" />
+    <Resource Include="Resources\Game7\Task2\empty_mouth.png" />
+    <Resource Include="Resources\Game7\Task2\frontLegs.png" />
+    <Resource Include="Resources\Game7\Task2\head.png" />
+    <Resource Include="Resources\Game7\Task2\leftEar.png" />
+    <Resource Include="Resources\Game7\Task2\mouth.png" />
+    <Resource Include="Resources\Game7\Task2\nose.png" />
+    <Resource Include="Resources\Game7\Task2\rightEar.png" />
+    <Resource Include="Resources\Game7\Task2\tail.png" />
     <Content Include="Resources\closeButton.png" />
     <Content Include="Resources\Game1\background.jpg" />
   </ItemGroup>
