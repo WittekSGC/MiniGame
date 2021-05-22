@@ -94,6 +94,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Games\Game8\Games\Bathroom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Games\Game8\Games\Fruits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Games\Game8\Games\Jobs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Games\Game8\GameWindow8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -121,6 +137,18 @@
     <Compile Include="Games\Game7\Tasks\Task2.cs" />
     <Compile Include="Games\Game7\Tasks\Task3.cs" />
     <Compile Include="Games\Game7\Tasks\TaskPattern.cs" />
+    <Compile Include="Games\Game8\Games\Bathroom.xaml.cs">
+      <DependentUpon>Bathroom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Games\Game8\Games\Fruits.xaml.cs">
+      <DependentUpon>Fruits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Games\Game8\Games\Jobs.xaml.cs">
+      <DependentUpon>Jobs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Games\Game8\GameWindow8.xaml.cs">
+      <DependentUpon>GameWindow8.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -191,6 +219,26 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Resources\Game8\fruits\апельсин.png" />
+    <Resource Include="Resources\Game8\fruits\арбуз.png" />
+    <Resource Include="Resources\Game8\fruits\банан.png" />
+    <Resource Include="Resources\Game8\fruits\груша.png" />
+    <Resource Include="Resources\Game8\fruits\яблоко.png" />
+    <Resource Include="Resources\Game8\bathroom\мочалка.png" />
+    <Resource Include="Resources\Game8\bathroom\мыло.png" />
+    <Resource Include="Resources\Game8\bathroom\полотенце.png" />
+    <Resource Include="Resources\Game8\bathroom\расческа.png" />
+    <Resource Include="Resources\Game8\bathroom\щетка.png" />
+    <Resource Include="Resources\Game8\jobs\маляр.png" />
+    <Resource Include="Resources\Game8\jobs\пастух.png" />
+    <Resource Include="Resources\Game8\jobs\пекарь.png" />
+    <Resource Include="Resources\Game8\jobs\сапожник.png" />
+    <Resource Include="Resources\Game8\jobs\столяр.png" />
+    <Resource Include="Resources\Game8\jobs\строитель.png" />
+    <Resource Include="Resources\Game8\jobs\фермер.png" />
+    <Resource Include="Resources\Game8\GamePreview1.png" />
+    <Resource Include="Resources\Game8\GamePreview2.png" />
+    <Resource Include="Resources\Game8\GamePreview3.png" />
     <Resource Include="Resources\Game7\background.jpg" />
     <Resource Include="Resources\Game7\Task3\backLegs.png" />
     <Resource Include="Resources\Game7\Task3\body.png" />

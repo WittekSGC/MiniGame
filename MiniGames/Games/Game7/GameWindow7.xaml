@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MiniGames"
         mc:Ignorable="d"
-        Title="Game7" 
+        Title="Собери зверюшку" 
         MinHeight="700" MinWidth="900"
         Height="700" Width="900"
         Closing="Window_Closing">
@@ -29,8 +29,8 @@
 
         <!--Надпись сверху-->
         <TextBlock Grid.ColumnSpan="3"
-                   Text="Собери зверюшку"
-                       FontSize="60"
+                   Text="Собери зверюшку, перетаскивая ее части в нужные места"
+                       FontSize="48"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        FontWeight="Bold"
@@ -72,6 +72,8 @@
                     Grid.Column="1"
                     Grid.Row="1"
                     Orientation="Horizontal"
+                   VerticalAlignment="Center"
+                   Margin="20"
                     />
     </Grid>
 </Window>

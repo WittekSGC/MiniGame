@@ -60,3 +60,11 @@ D:\Заказы\Катя\MiniGames\MiniGames\obj\Debug\Games\Game6\GameWindow6.b
 D:\Заказы\Катя\MiniGames\MiniGames\obj\Debug\Games\Game7\GameWindow7.g.cs
 D:\Заказы\Катя\MiniGames\MiniGames\obj\Debug\Games\Game7\GameWindow7.baml
 D:\Заказы\Катя\MiniGames\MiniGames\obj\Debug\MiniGames.csprojAssemblyReference.cache
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Debug\Games\Game8\GameWindow8.g.cs
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Debug\Games\Game8\GameWindow8.baml
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Debug\Games\Game8\Games\Bathroom.g.cs
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Debug\Games\Game8\Games\Fruits.g.cs
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Debug\Games\Game8\Games\Jobs.g.cs
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Debug\Games\Game8\Games\Bathroom.baml
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Debug\Games\Game8\Games\Fruits.baml
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Debug\Games\Game8\Games\Jobs.baml

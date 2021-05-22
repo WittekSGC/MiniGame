@@ -71,7 +71,7 @@ namespace MiniGames
                 count++;
             }
 
-            Title = Multipler.ToString();
+            //Title = Multipler.ToString();
         }
 
         private void CanvasDrop(object sender, DragEventArgs e)
@@ -158,8 +158,6 @@ namespace MiniGames
                     CurrentTask = new Task3();
                     break;
                 default:
-                    //end game
-                    MessageBox.Show("END OF GAME");
                     EndOfGame();
                     break;
             }
@@ -246,8 +244,8 @@ namespace MiniGames
                 Image img = new Image()
                 {
                     Source = CurrentTask.Images[i].Source,
-                    MaxWidth = 150,
-                    MaxHeight = 150,
+                    MaxWidth = 120,
+                    MaxHeight = 120,
                     MinWidth = 50,
                     MinHeight = 50
                 };
