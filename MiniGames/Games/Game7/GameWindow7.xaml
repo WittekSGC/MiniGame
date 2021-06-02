@@ -8,7 +8,8 @@
         Title="Собери зверюшку" 
         MinHeight="700" MinWidth="900"
         Height="700" Width="900"
-        Closing="Window_Closing">
+        Closing="Window_Closing"
+        WindowStartupLocation="CenterScreen">
     <Window.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#FF4086FF" Offset="0"/>

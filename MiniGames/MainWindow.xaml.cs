@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MiniGames
 {
@@ -25,7 +16,7 @@ namespace MiniGames
         private const int n = 9; //кол-во игр
         private Image[] images = new Image[n];
         private TextBlock[] textBlocks = new TextBlock[n];
-        private string[] GamesName = new string[] { "Что где растёт?", "Больше-меньше", "Цветные фигуры", "Найди отличия", "Сосчитай лепестки", "Паровозик", "Собери зверюшку", "Загадки", "Game9" };
+        private string[] GamesName = new string[] { "Что где растёт?", "Больше-меньше", "Цветные фигуры", "Найди отличия", "Сосчитай лепестки", "Паровозик", "Собери зверюшку", "Загадки", "Найди пару" };
         private Window[] Games = new Window[n];
 
         public WindowState windowState;
@@ -45,7 +36,7 @@ namespace MiniGames
 
         private void MainWindow_Closed(object sender, EventArgs e)
         {
-            
+
         }
 
         private void MainWindowStateChanged(object sender, EventArgs e)
@@ -99,7 +90,7 @@ namespace MiniGames
                 //text blocks
                 textBlocks[i] = new TextBlock();
                 textBlocks[i].Text = GamesName[i];
-                textBlocks[i].FontSize = Height/24;
+                textBlocks[i].FontSize = Height / 24;
                 textBlocks[i].TextAlignment = TextAlignment.Center;
                 textBlocks[i].VerticalAlignment = VerticalAlignment.Bottom;
                 textBlocks[i].Margin = new Thickness(0, 0, 0, 20);
@@ -117,7 +108,8 @@ namespace MiniGames
             int pick = -1;
             for (int i = 0; i < n; i++)
             {
-                if ((sender as Image).Equals(images[i])) {
+                if ((sender as Image).Equals(images[i]))
+                {
                     pick = i;
                     break;
                 }
@@ -138,7 +130,7 @@ namespace MiniGames
                         Games[2] = new GameWindow3(this, WindowState);
                         Games[2].Show();
                         break;
-                    case 3:                        
+                    case 3:
                         Games[3] = new GameWindow4(this, WindowState);
                         Games[3].Show();
                         break;
@@ -147,15 +139,19 @@ namespace MiniGames
                         Games[4].Show();
                         break;
                     case 5:
-                        Games[6] = new GameWindow6(this, WindowState);
-                        Games[6].Show();
+                        Games[5] = new GameWindow6(this, WindowState);
+                        Games[5].Show();
                         break;
                     case 6:
-                        Games[7] = new GameWindow7(this, WindowState);
-                        Games[7].Show();
+                        Games[6] = new GameWindow7(this, WindowState);
+                        Games[6].Show();
                         break;
                     case 7:
-                        Games[8] = new GameWindow8(this, WindowState);
+                        Games[7] = new GameWindow8(this, WindowState);
+                        Games[7].Show();
+                        break;
+                    case 8:
+                        Games[8] = new GameWindow9(this, WindowState);
                         Games[8].Show();
                         break;
                     default:
@@ -177,8 +173,8 @@ namespace MiniGames
         private void Item_MouseEnter(object sender, MouseEventArgs e)
         {
             ThicknessAnimation anim = new ThicknessAnimation();
-            anim.From = new Thickness(10,10,10,50);
-            anim.To = new Thickness(0,0,0,10);
+            anim.From = new Thickness(10, 10, 10, 50);
+            anim.To = new Thickness(0, 0, 0, 10);
             anim.Duration = TimeSpan.FromSeconds(0.4);
             ((UIElement)sender).BeginAnimation(MarginProperty, anim);
         }

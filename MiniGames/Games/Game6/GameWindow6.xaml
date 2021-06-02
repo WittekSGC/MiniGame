@@ -11,7 +11,10 @@
         Width="816" 
         MinHeight="620" 
         MinWidth="816" 
-        Closing="Window_Closing" SizeChanged="Window_SizeChanged" StateChanged="Window_StateChanged">
+        Closing="Window_Closing"
+        WindowStartupLocation="CenterScreen"
+        SizeChanged="Window_SizeChanged"
+        StateChanged="Window_StateChanged">
 
     <!--ФОН-->
     <Window.Background>

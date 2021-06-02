@@ -13,17 +13,22 @@
         Closing="Window_Closing" 
         WindowStartupLocation="CenterScreen">
 
-    <Window.Background> 
-        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.5">
+    <Window.Background>
+        <!--<LinearGradientBrush StartPoint="0,0" EndPoint="1,0.5">
             <GradientStop Color="#ff9cc3" Offset="0"/>
             <GradientStop Color="#ff458e" Offset="0.2"/>
             <GradientStop Color="#ff9cc3" Offset="0.4"/>
             <GradientStop Color="#ff458e" Offset="0.6"/>
             <GradientStop Color="#ff9cc3" Offset="0.8"/>
             <GradientStop Color="#ff458e" Offset="1"/>
-        </LinearGradientBrush>
+        </LinearGradientBrush>-->
+        <ImageBrush>
+            <ImageBrush.ImageSource>
+                /Resources/Game2/background.jpg
+            </ImageBrush.ImageSource>
+        </ImageBrush>
     </Window.Background>
-    
+
     <Grid x:Name="RootGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="60"/>

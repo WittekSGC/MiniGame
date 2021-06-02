@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("helpandmanual.mdf")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("helpandmanual_log.ldf")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/closebutton.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/game1/background.jpg")]
 

@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MiniGames.Games.Game8.Games
 {
@@ -125,31 +116,31 @@ namespace MiniGames.Games.Game8.Games
                 new object[]
                 {
                     tbQuestion1,    //первый вопрос
-                    imgAnswer3,     
+                    imgAnswer3,
                     "Мыло"
                 },
                 new object[]
                 {
                     tbQuestion2,    //второй вопрос
-                    imgAnswer5,      
+                    imgAnswer5,
                     "Полотенце"
                 },
                 new object[]
                 {
                     tbQuestion3,    //третий вопрос
-                    imgAnswer2,      
+                    imgAnswer2,
                     "Щетка"
                 },
                 new object[]
                 {
                     tbQuestion4,    //четвертый вопрос
-                    imgAnswer1,      
+                    imgAnswer1,
                     "Мочалка"
                 },
                 new object[]
                 {
                     tbQuestion5,    //пятый вопрос
-                    imgAnswer4,      
+                    imgAnswer4,
                     "Расческа"
                 }
             };
@@ -202,13 +193,11 @@ namespace MiniGames.Games.Game8.Games
 
         private void AddStars()
         {
-            BitmapImage imgSrc = LoadImageByPath("/Resources/Game2/star.png");
-
             for (int i = 0; i < LevelsCount; i++)
             {
                 StarsArray[i] = new Image
                 {
-                    Source = imgSrc,
+                    Source = App.LoadImageByPath("/Resources/star.png"),
                     Width = 50,
                     Height = 50,
                     Opacity = 0.4,
@@ -219,14 +208,6 @@ namespace MiniGames.Games.Game8.Games
             }
         }
 
-        private BitmapImage LoadImageByPath(string path)
-        {
-            BitmapImage img = new BitmapImage();
-            img.BeginInit();
-            img.UriSource = new Uri(path, UriKind.Relative);
-            img.EndInit();
-            return img;
-        }
 
         private void Wait1secondAfterAnimation(object sender, EventArgs e)
         {

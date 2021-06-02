@@ -33,9 +33,7 @@ namespace MiniGames
             NullImg = new BitmapImage();
             try
             {
-                NullImg.BeginInit();
-                NullImg.UriSource = new Uri(NullImage, UriKind.Relative);
-                NullImg.EndInit();
+                NullImg = App.LoadImageByPath(NullImage);
             }
             catch (Exception ex)
             {
@@ -84,7 +82,7 @@ namespace MiniGames
                     {
                         Name = name,
                         AllowDrop = true,
-                        Margin = new Thickness(15), 
+                        Margin = new Thickness(15),
                         VerticalAlignment = VerticalAlignment.Stretch,
                         HorizontalAlignment = HorizontalAlignment.Stretch,
                         Source = NullImg,
@@ -108,7 +106,7 @@ namespace MiniGames
                     if ((sender as Image).Parent is Grid)
                     {
                         //MessageBox.Show((!(sender as Image).Source.ToString().Contains(NullImage)).ToString() + (sender as Image).Source.ToString());
-                        
+
                         LastClicked.Source = NullImg;
                     }
                     (sender as Image).Source = e.Data.GetData(typeof(ImageSource)) as ImageSource;
@@ -126,14 +124,10 @@ namespace MiniGames
                     (sender as Image).Source = e.Data.GetData(typeof(ImageSource)) as ImageSource;
 
                     // создание изображения для замены
-                    BitmapImage imgSrc = new BitmapImage();
                     string path = "/Resources/Game3/";
-                    imgSrc.BeginInit();
-                    imgSrc.UriSource = new Uri(path+temp+".png", UriKind.Relative);
-                    imgSrc.EndInit();
                     Image swap = new Image()
                     {
-                        Source = imgSrc,
+                        Source = App.LoadImageByPath(path + temp + ".png"),
                         Margin = new Thickness(10),
                         Width = 64,
                         Height = 64,
@@ -183,7 +177,7 @@ namespace MiniGames
             int counter = 0;
             bool end = false;
 
-            for (int i = 0; i <4; i++)
+            for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
                 {
@@ -254,16 +248,11 @@ namespace MiniGames
 
                     path += ".png";
 
-                    imgSrc = new BitmapImage();
-                    imgSrc.BeginInit();
-                    imgSrc.UriSource = new Uri(path, UriKind.Relative);
-                    imgSrc.EndInit();
-
                     Random r = new Random();
 
                     TargetImages[counter] = new Image()
                     {
-                        Source = imgSrc,
+                        Source = App.LoadImageByPath(path),
                         Margin = new Thickness(10),
                         Width = 64,
                         Height = 64,
@@ -373,7 +362,8 @@ namespace MiniGames
                 {
                     b = CheckRightPositions(i, j);
 
-                    if (!b) { 
+                    if (!b)
+                    {
                         ReturnFigureToPanel(i, j);
                         endGame = false;
                     }
@@ -417,14 +407,10 @@ namespace MiniGames
             (GameGrid.Children[counter + 24] as Image).Source = NullImg;
 
             // создание изображения для замены
-            BitmapImage imgSrc = new BitmapImage();
             string path = "/Resources/Game3/";
-            imgSrc.BeginInit();
-            imgSrc.UriSource = new Uri(path + temp + ".png", UriKind.Relative);
-            imgSrc.EndInit();
             Image swap = new Image()
             {
-                Source = imgSrc,
+                Source = App.LoadImageByPath(path + temp + ".png"),
                 Margin = new Thickness(10),
                 Width = 64,
                 Height = 64,

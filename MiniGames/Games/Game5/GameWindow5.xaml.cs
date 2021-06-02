@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MiniGames
 {
@@ -93,14 +88,14 @@ namespace MiniGames
                 LoadLevel();
             }
             else EndOfGame();
-            
+
         }
 
         //действия по окончанию уровня
         private void EndOfLevel()
         {
             DoubleAnimation showStar = new DoubleAnimation(1, TimeSpan.FromSeconds(0.6));
-            StarsArray[Level-1].BeginAnimation(OpacityProperty, showStar);
+            StarsArray[Level - 1].BeginAnimation(OpacityProperty, showStar);
         }
 
         //метод действий по окончанию всех уровней
@@ -191,7 +186,7 @@ namespace MiniGames
         //метод, который создает звездочки прогресса
         private void AddStars()
         {
-            BitmapImage imgSrc = LoadImageByPath("/Resources/Game2/star.png");
+            BitmapImage imgSrc = App.LoadImageByPath("/Resources/Game2/star.png");
 
             for (int i = 0; i < LevelsCount; i++)
             {
@@ -218,23 +213,13 @@ namespace MiniGames
             string basePathFront = "/Resources/Game5/lvl";
             string basePathEnd = ".png";
 
-            LeftImage1.Source = LoadImageByPath(basePathFront + Level.ToString() + "/" + LeftImagesOrder[0] + "-1" + basePathEnd);
-            LeftImage2.Source = LoadImageByPath(basePathFront + Level.ToString() + "/" + LeftImagesOrder[1] + "-1" + basePathEnd);
-            LeftImage3.Source = LoadImageByPath(basePathFront + Level.ToString() + "/" + LeftImagesOrder[2] + "-1" + basePathEnd);
+            LeftImage1.Source = App.LoadImageByPath(basePathFront + Level.ToString() + "/" + LeftImagesOrder[0] + "-1" + basePathEnd);
+            LeftImage2.Source = App.LoadImageByPath(basePathFront + Level.ToString() + "/" + LeftImagesOrder[1] + "-1" + basePathEnd);
+            LeftImage3.Source = App.LoadImageByPath(basePathFront + Level.ToString() + "/" + LeftImagesOrder[2] + "-1" + basePathEnd);
 
-            RightImage1.Source = LoadImageByPath(basePathFront + Level.ToString() + "/" + RightImagesOrder[0] + "-2" + basePathEnd);
-            RightImage2.Source = LoadImageByPath(basePathFront + Level.ToString() + "/" + RightImagesOrder[1] + "-2" + basePathEnd);
-            RightImage3.Source = LoadImageByPath(basePathFront + Level.ToString() + "/" + RightImagesOrder[2] + "-2" + basePathEnd);
-        }
-
-        //метод для загрузки картинки из папки ресурсов по строке пути
-        private BitmapImage LoadImageByPath(string path)
-        {
-            BitmapImage img = new BitmapImage();
-            img.BeginInit();
-            img.UriSource = new Uri(path, UriKind.Relative);
-            img.EndInit();
-            return img;
+            RightImage1.Source = App.LoadImageByPath(basePathFront + Level.ToString() + "/" + RightImagesOrder[0] + "-2" + basePathEnd);
+            RightImage2.Source = App.LoadImageByPath(basePathFront + Level.ToString() + "/" + RightImagesOrder[1] + "-2" + basePathEnd);
+            RightImage3.Source = App.LoadImageByPath(basePathFront + Level.ToString() + "/" + RightImagesOrder[2] + "-2" + basePathEnd);
         }
 
         //метод создания сетки для нажатий
@@ -253,14 +238,14 @@ namespace MiniGames
                 {
                     HorizontalAlignment = HorizontalAlignment.Stretch,
                     VerticalAlignment = VerticalAlignment.Stretch,
-                    Background = new SolidColorBrush(Color.FromArgb(122,0,0,0)),
+                    Background = new SolidColorBrush(Color.FromArgb(122, 0, 0, 0)),
                     Opacity = 0,
                     Cursor = Cursors.Hand
                 };
                 Image checker = new Image()
                 {
                     Name = "LeftCheck" + i.ToString(),
-                    Source = LoadImageByPath("/Resources/Game5/check.png"),
+                    Source = App.LoadImageByPath("/Resources/Game5/check.png"),
                     Width = 90,
                     Height = 76,
                     HorizontalAlignment = HorizontalAlignment.Center,
@@ -301,7 +286,7 @@ namespace MiniGames
                 Image checker = new Image()
                 {
                     Name = "RightCheck" + i.ToString(),
-                    Source = LoadImageByPath("/Resources/Game5/check.png"),
+                    Source = App.LoadImageByPath("/Resources/Game5/check.png"),
                     Width = 90,
                     Height = 76,
                     HorizontalAlignment = HorizontalAlignment.Center,
@@ -528,8 +513,8 @@ namespace MiniGames
 
                 LeftPick = -1;
                 RightPick = -1;
-            }    
-            else 
+            }
+            else
             if (LeftPick != -1 && RightPick != -1)
             {
                 LeftPick = -1;

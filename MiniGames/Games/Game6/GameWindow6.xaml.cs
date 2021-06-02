@@ -5,7 +5,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
 
 /*
  * CurrentTask - массив из CHAR для хранения буквы картинки в пути к элементу, по ним будет идти далее проверка
@@ -121,22 +120,12 @@ namespace MiniGames
         private void LoadAnswersImages()
         {
             string path = "/Resources/Game6/alphabet/";
-            ImageAnswer1.Source = LoadImageByPath(path + CurrentTask[0].ToString().ToUpper() + ".png");
-            ImageAnswer2.Source = LoadImageByPath(path + CurrentTask[1].ToString().ToUpper() + ".png");
-            ImageAnswer3.Source = LoadImageByPath(path + CurrentTask[2].ToString().ToUpper() + ".png");
-            ImageAnswer4.Source = LoadImageByPath(path + CurrentTask[3].ToString().ToUpper() + ".png");
-            ImageAnswer5.Source = LoadImageByPath(path + CurrentTask[4].ToString().ToUpper() + ".png");
-            ImageAnswer6.Source = LoadImageByPath(path + CurrentTask[5].ToString().ToUpper() + ".png");
-        }
-
-        //Загрузка картинок по заданному пути
-        private BitmapImage LoadImageByPath(string path)
-        {
-            BitmapImage img = new BitmapImage();
-            img.BeginInit();
-            img.UriSource = new Uri(path, UriKind.Relative);
-            img.EndInit();
-            return img;
+            ImageAnswer1.Source = App.LoadImageByPath(path + CurrentTask[0].ToString().ToUpper() + ".png");
+            ImageAnswer2.Source = App.LoadImageByPath(path + CurrentTask[1].ToString().ToUpper() + ".png");
+            ImageAnswer3.Source = App.LoadImageByPath(path + CurrentTask[2].ToString().ToUpper() + ".png");
+            ImageAnswer4.Source = App.LoadImageByPath(path + CurrentTask[3].ToString().ToUpper() + ".png");
+            ImageAnswer5.Source = App.LoadImageByPath(path + CurrentTask[4].ToString().ToUpper() + ".png");
+            ImageAnswer6.Source = App.LoadImageByPath(path + CurrentTask[5].ToString().ToUpper() + ".png");
         }
 
         //Подгрузка нужных букв для заданий
@@ -196,9 +185,9 @@ namespace MiniGames
         }
         private void TrainPanelOuted(object sender, EventArgs e)
         {
-            SlotImage1.Source = LoadImageByPath("/Resources/Game6/alphabet/!empty.png");
-            SlotImage2.Source = LoadImageByPath("/Resources/Game6/alphabet/!empty.png");
-            SlotImage3.Source = LoadImageByPath("/Resources/Game6/alphabet/!empty.png");
+            SlotImage1.Source = App.LoadImageByPath("/Resources/Game6/alphabet/!empty.png");
+            SlotImage2.Source = App.LoadImageByPath("/Resources/Game6/alphabet/!empty.png");
+            SlotImage3.Source = App.LoadImageByPath("/Resources/Game6/alphabet/!empty.png");
 
             /*
             FirstTextBlock.Opacity = 1;
@@ -537,15 +526,13 @@ namespace MiniGames
 
         private void AddStars()
         {
-            BitmapImage imgSrc = LoadImageByPath("/Resources/Game2/star.png");
-
             StarsArray = new Image[LevelsCount];
 
             for (int i = 0; i < LevelsCount; i++)
             {
                 StarsArray[i] = new Image
                 {
-                    Source = imgSrc,
+                    Source = App.LoadImageByPath("/Resources/Game2/star.png"),
                     Width = 50,
                     Height = 50,
                     Opacity = 0.4,

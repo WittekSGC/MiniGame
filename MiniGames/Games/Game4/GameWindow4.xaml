@@ -9,8 +9,9 @@
         Height="600" 
         Width="800"
         MinHeight="600" 
-        MinWidth="800"
-        Closing="Window_Closing">
+        MinWidth="900"
+        Closing="Window_Closing"
+        WindowStartupLocation="CenterScreen">
     <Window.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#A5C0EE" Offset="0"/>
@@ -58,12 +59,13 @@
                     Margin="20 0 0 0"/>
 
         <!--start images-->
-        <Image Source="/Resources/Game4/part1left.png"
+        <Image Source="/Resources/Game4/lvl1/part1left.png"
                Width="360"
                Height="258"
                Grid.Column="0"
                Grid.Row="1" 
-               VerticalAlignment="Center"/>
+               VerticalAlignment="Center"
+               x:Name="leftImage"/>
         <Grid Width="360"
                Height="258"
                Grid.Column="0"
@@ -72,12 +74,13 @@
               >
         </Grid>
 
-        <Image Source="/Resources/Game4/part2right.png"
+        <Image Source="/Resources/Game4/lvl1/part2right.png"
                Width="360"
                Height="258"
                Grid.Column="1"
                Grid.Row="1" 
-               VerticalAlignment="Center"/>
+               VerticalAlignment="Center"
+               x:Name="rightImage"/>
         <Grid Width="360"
                Height="258"
                Grid.Column="1"

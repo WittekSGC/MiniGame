@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MiniGames"
         mc:Ignorable="d"
-        Title="GameWindow8" Height="600" Width="800" 
+        Title="Загадки" Height="600" Width="800" 
         MinHeight="600" MinWidth="800"
+        WindowStartupLocation="CenterScreen"
         >
     <Window.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">

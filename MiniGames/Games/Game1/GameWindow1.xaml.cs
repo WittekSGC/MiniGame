@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MiniGames
 {
@@ -31,7 +25,7 @@ namespace MiniGames
         private Image LastClicked;
         private Image[] ImagesOffspings;
         private Image[] ImagesParent;
-        private bool[] TargetsEntries = new bool[] {false, false, false, false };
+        private bool[] TargetsEntries = new bool[] { false, false, false, false };
         private List<int> RandomNumbers = new List<int>();
 
 
@@ -86,18 +80,10 @@ namespace MiniGames
             for (int i = 1; i <= 12; i++)
             {
                 ImagesOffspings[i - 1] = new Image();
-                BitmapImage image = new BitmapImage();
-                image.BeginInit();
-                image.UriSource = new Uri("/Resources/Game1/A" + i.ToString() + ".jpg", UriKind.Relative);
-                image.EndInit();
-                ImagesOffspings[i-1].Source = image;
+                ImagesOffspings[i - 1].Source = App.LoadImageByPath("/Resources/Game1/A" + i.ToString() + ".jpg");
 
                 ImagesParent[i - 1] = new Image();
-                image = new BitmapImage();
-                image.BeginInit();
-                image.UriSource = new Uri("/Resources/Game1/B" + i.ToString() + ".jpg", UriKind.Relative);
-                image.EndInit();
-                ImagesParent[i-1].Source = image;
+                ImagesParent[i - 1].Source = App.LoadImageByPath("/Resources/Game1/B" + i.ToString() + ".jpg");
                 ImagesParent[i - 1].MouseMove += ImageOffspringMouseMove;
             }
         }
@@ -152,7 +138,7 @@ namespace MiniGames
         private bool CheckRightPosition(object sender)
         {
             string temp = LastClicked.Source.ToString();
-            temp = temp.Remove(0, temp.LastIndexOf('/')+2);
+            temp = temp.Remove(0, temp.LastIndexOf('/') + 2);
             temp = temp.Remove(temp.IndexOf('.'));
             int pick = int.Parse(temp);
             bool result = false;
@@ -222,10 +208,7 @@ namespace MiniGames
             ShowPictures();
             RandomizeNumbers();
             TargetsEntries = new bool[] { false, false, false, false };
-            BitmapImage image = new BitmapImage();
-            image.BeginInit();
-            image.UriSource = new Uri(UnknownImage, UriKind.Relative);
-            image.EndInit();
+            BitmapImage image = App.LoadImageByPath(UnknownImage);
             Target1.Source = image;
             Target2.Source = image;
             Target3.Source = image;

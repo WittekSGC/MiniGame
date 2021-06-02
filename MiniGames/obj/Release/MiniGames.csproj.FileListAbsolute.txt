@@ -60,3 +60,15 @@ D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\MiniGames.csproj.Genera
 D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\MiniGames.csproj.CoreCompileInputs.cache
 D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\MiniGames.exe
 D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\MiniGames.pdb
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\Games\Game8\Games\Bathroom.g.cs
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\Games\Game8\Games\Fruits.g.cs
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\Games\Game8\Games\Jobs.g.cs
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\Games\Game8\GameWindow8.g.cs
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\Games\Game9\GameWindow9.g.cs
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\Games\Game8\Games\Bathroom.baml
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\Games\Game8\Games\Fruits.baml
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\Games\Game8\Games\Jobs.baml
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\Games\Game8\GameWindow8.baml
+D:\Заказы\Катя\MiniGames\MiniGames\obj\Release\Games\Game9\GameWindow9.baml
+D:\Заказы\Катя\MiniGames\MiniGames\bin\Release\HelpAndManual.mdf
+D:\Заказы\Катя\MiniGames\MiniGames\bin\Release\HelpAndManual_log.ldf

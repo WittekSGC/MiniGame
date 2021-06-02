@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MiniGames.Games.Game8.Games
 {
@@ -120,7 +111,8 @@ namespace MiniGames.Games.Game8.Games
         private void NextLevel()
         {
             //убрать окно и событие предыдущего уровня
-            if (Level > 0 && Level<LevelsCount) {
+            if (Level > 0 && Level < LevelsCount)
+            {
                 DoubleAnimation opacityDown = new DoubleAnimation(0, TimeSpan.FromSeconds(1));
                 opacityDown.BeginTime = TimeSpan.FromSeconds(2);
                 (Levels[Level - 1][0] as TextBlock).BeginAnimation(OpacityProperty, opacityDown);
@@ -129,7 +121,7 @@ namespace MiniGames.Games.Game8.Games
                 opacityDown.BeginTime = TimeSpan.FromSeconds(2);
                 tbAnswer.BeginAnimation(OpacityProperty, opacityDown);
             }
-            
+
             Level++;
 
             //Если Level превысил количество уровней - окончить игру
@@ -155,13 +147,11 @@ namespace MiniGames.Games.Game8.Games
 
         private void AddStars()
         {
-            BitmapImage imgSrc = LoadImageByPath("/Resources/Game2/star.png");
-
             for (int i = 0; i < LevelsCount; i++)
             {
                 StarsArray[i] = new Image
                 {
-                    Source = imgSrc,
+                    Source = App.LoadImageByPath("/Resources/star.png"),
                     Width = 50,
                     Height = 50,
                     Opacity = 0.4,
@@ -171,16 +161,6 @@ namespace MiniGames.Games.Game8.Games
                 StarsPanel.Children.Add(StarsArray[i]);
             }
         }
-
-        private BitmapImage LoadImageByPath(string path)
-        {
-            BitmapImage img = new BitmapImage();
-            img.BeginInit();
-            img.UriSource = new Uri(path, UriKind.Relative);
-            img.EndInit();
-            return img;
-        }
-
         private void CurrentAnswer_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             CurrentAnswer.MouseLeftButtonUp -= CurrentAnswer_MouseLeftButtonUp;

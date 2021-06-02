@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MiniGames.Games.Game8.Games"
         mc:Ignorable="d"
-        Title="Bathroom"
+        Title="Загадки про ванную комнату"
         Height="500" 
         Width="800"
-        MinHeight="600" 
+        MinHeight="600"
+        WindowStartupLocation="CenterScreen" 
         MinWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>

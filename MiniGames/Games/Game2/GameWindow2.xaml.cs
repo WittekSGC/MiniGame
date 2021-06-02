@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace MiniGames
@@ -84,17 +77,9 @@ namespace MiniGames
                 EndOfGame();
                 return;
             }
+            LeftImage.Source = App.LoadImageByPath(gameLevels[Level].ImagePath1);
+            RightImage.Source = App.LoadImageByPath(gameLevels[Level].ImagePath2);
 
-            BitmapImage imgSrc = new BitmapImage();
-            imgSrc.BeginInit();
-            imgSrc.UriSource = new Uri(gameLevels[Level].ImagePath1, UriKind.Relative);
-            imgSrc.EndInit();
-            LeftImage.Source = imgSrc;
-            imgSrc = new BitmapImage();
-            imgSrc.BeginInit();
-            imgSrc.UriSource = new Uri(gameLevels[Level].ImagePath2, UriKind.Relative);
-            imgSrc.EndInit();
-            RightImage.Source = imgSrc;
             QuestionLabel.Text = gameLevels[Level].Question;
         }
 
@@ -115,6 +100,7 @@ namespace MiniGames
             else
             {
                 ManualClosing = false;
+                Main.Show();
                 Close();
                 return;
             }
@@ -144,14 +130,10 @@ namespace MiniGames
 
         private void AddStars()
         {
-            BitmapImage imgSrc = new BitmapImage();
-            imgSrc.BeginInit();
-            imgSrc.UriSource = new Uri("/Resources/Game2/star.png", UriKind.Relative);
-            imgSrc.EndInit();
             for (int i = 0; i < 10; i++)
             {
                 StarsArray[i] = new Image();
-                StarsArray[i].Source = imgSrc;
+                StarsArray[i].Source = App.LoadImageByPath("/Resources/star.png");
                 StarsArray[i].Width = 50;
                 StarsArray[i].Height = 50;
                 StarsArray[i].Opacity = 0.2;

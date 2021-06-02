@@ -4,7 +4,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
 
 namespace MiniGames
 {
@@ -17,7 +16,8 @@ namespace MiniGames
         private bool ManualClosing = true;
         private Image[] StarsArray = new Image[5];
         private int StarsEnabledCount = 0;
-        int h, w;
+        int h, w, imgW, imgH;
+        int Level = 1;
 
         Point[] RightPosition = new Point[5];
 
@@ -39,21 +39,7 @@ namespace MiniGames
             AddStars();
 
             Loaded += GameWindow4_Loaded;
-
-            RightPosition[0].X = 290;
-            RightPosition[0].Y = 45;
-
-            RightPosition[1].X = 105;
-            RightPosition[1].Y = 35;
-
-            RightPosition[2].X = 65;
-            RightPosition[2].Y = 185;
-
-            RightPosition[3].X = 225;
-            RightPosition[3].Y = 70;
-
-            RightPosition[4].X = 0;
-            RightPosition[4].Y = 20;
+            CreateRightPoints();
         }
 
         private void GameWindow4_Loaded(object sender, RoutedEventArgs e)
@@ -90,12 +76,6 @@ namespace MiniGames
 
             //иначе проиграть анимации
             double animationTime = 0.4;
-
-            BitmapImage imgSrc = new BitmapImage();
-            imgSrc.BeginInit();
-            imgSrc.UriSource = new Uri("/Resources/Game4/circled.png", UriKind.Relative);
-            imgSrc.EndInit();
-
             DoubleAnimation doubleAnimationW = new DoubleAnimation(0, w, TimeSpan.FromSeconds(animationTime));
             DoubleAnimation doubleAnimationH = new DoubleAnimation(0, h, TimeSpan.FromSeconds(animationTime));
             ThicknessAnimation thicknessAnimation = new ThicknessAnimation(new Thickness(w / 2, h / 2, 0, 0),
@@ -109,11 +89,11 @@ namespace MiniGames
                 {
                     if (r.Equals(item))
                     {
-                        items[0].Source = imgSrc;
+                        items[0].Source = App.LoadImageByPath("/Resources/Game4/circled.png");
                         items[0].BeginAnimation(WidthProperty, doubleAnimationW);
                         items[0].BeginAnimation(HeightProperty, doubleAnimationH);
                         items[0].BeginAnimation(MarginProperty, thicknessAnimation);
-                        items[1].Source = imgSrc;
+                        items[1].Source = App.LoadImageByPath("/Resources/Game4/circled.png");
                         items[1].BeginAnimation(WidthProperty, doubleAnimationW);
                         items[1].BeginAnimation(HeightProperty, doubleAnimationH);
                         items[1].BeginAnimation(MarginProperty, thicknessAnimation);
@@ -153,10 +133,24 @@ namespace MiniGames
         /// </summary>
         private void AddClickGrid()
         {
-            w = 40;
-            h = 40;
-            int countX = 360 / w;
-            int countY = 258 / h;
+            //высота кружка
+            if (Level == 1)
+            {
+                w = 40;
+                h = 40;
+                imgW = 360;
+                imgH = 258;
+            }
+            //if (Level == 2)
+            else
+            {
+                w = 50;
+                h = 50;
+                imgW = 470;
+                imgH = 230;
+            }
+            int countX = imgW / w;
+            int countY = imgH / h;
 
             for (int i = 0; i < 5; i++)
             {
@@ -226,16 +220,11 @@ namespace MiniGames
         /// </summary>
         private void AddStars()
         {
-            BitmapImage imgSrc = new BitmapImage();
-            imgSrc.BeginInit();
-            imgSrc.UriSource = new Uri("/Resources/Game2/star.png", UriKind.Relative);
-            imgSrc.EndInit();
-
             for (int i = 0; i < 5; i++)
             {
                 StarsArray[i] = new Image
                 {
-                    Source = imgSrc,
+                    Source = App.LoadImageByPath("/Resources/star.png"),
                     Width = 50,
                     Height = 50,
                     Opacity = 0.4,
@@ -270,6 +259,16 @@ namespace MiniGames
             if ((bool)Result)
             {
                 //восстанвить начальные значения 
+                Level = (Level == 1) ? 2 : 1;
+
+                leftImage.Source = App.LoadImageByPath("/Resources/Game4/lvl" + Level.ToString() + "/part1left.png");
+                rightImage.Source = App.LoadImageByPath("/Resources/Game4/lvl" + Level.ToString() + "/part2right.png");
+                foreach (Image image in StarsArray)
+                {
+                    image.BeginAnimation(OpacityProperty, null); 
+                }
+
+                CreateRightPoints();
 
                 StarsEnabledCount = 0;
                 foreach (Image item in StarsArray)
@@ -286,6 +285,47 @@ namespace MiniGames
             {
                 ManualClosing = false;
                 Close();
+            }
+        }
+
+        private void CreateRightPoints()
+        {
+            switch (Level)
+            {
+                case 1:
+                    RightPosition[0].X = 290;
+                    RightPosition[0].Y = 45;
+
+                    RightPosition[1].X = 105;
+                    RightPosition[1].Y = 35;
+
+                    RightPosition[2].X = 65;
+                    RightPosition[2].Y = 185;
+
+                    RightPosition[3].X = 225;
+                    RightPosition[3].Y = 70;
+
+                    RightPosition[4].X = 0;
+                    RightPosition[4].Y = 20;
+                    break;
+                case 2:
+                    RightPosition[0].X = 10;
+                    RightPosition[0].Y = 120;
+
+                    RightPosition[1].X = 85;
+                    RightPosition[1].Y = 115;
+
+                    RightPosition[2].X = 150;
+                    RightPosition[2].Y = 35;
+
+                    RightPosition[3].X = 300;
+                    RightPosition[3].Y = 45;
+
+                    RightPosition[4].X = 280;
+                    RightPosition[4].Y = 180;
+                    break;
+                default:
+                    break;
             }
         }
     }

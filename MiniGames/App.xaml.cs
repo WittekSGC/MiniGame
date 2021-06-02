@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace MiniGames
 {
@@ -13,5 +9,14 @@ namespace MiniGames
     /// </summary>
     public partial class App : Application
     {
+
+        public static BitmapImage LoadImageByPath(string path)
+        {
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+            image.UriSource = new Uri(path, UriKind.Relative);
+            image.EndInit();
+            return image;
+        }
     }
 }
